@@ -5,16 +5,27 @@ import ProductList from "../components/products/ProductList";
 import EditProduct from "../components/products/EditProduct";
 import Register from "../components/auth/Register";
 import Login from "../components/auth/Login";
+import HomePage from "../pages/HomePage";
+import RecipesPage from "../pages/RecipesPage";
+import BooksPage from "../pages/BooksPage";
+import DeliciousPlacesPage from "../pages/DeliciousPlacesPage";
+import AboutPage from "../pages/AboutPage";
+import HeaderHomePage from "../components/homePage/HeaderHomePage";
 
 const MainRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<h1>HOME PAGE</h1>} />
+      <Route path="/" element={<HeaderHomePage />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/addProduct" element={<AddProduct />} />
       <Route path="/productList" element={<ProductList />} />
       <Route path="/edit/:id" element={<EditProduct />} />
+      <Route path="/recipes" element={<RecipesPage />} />
+      <Route path="/books" element={<BooksPage />} />
+      <Route path="/deliciousPlaces" element={<DeliciousPlacesPage />} />
+      <Route path="/about" element={<AboutPage />} />
+
       <Route path="*" element={<h1>NOT FOUND PAGE</h1>} />
     </Routes>
   );

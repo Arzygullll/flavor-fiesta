@@ -1,27 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useProduct } from "../../context/ProductContextProvider";
-import { Button } from "react-bootstrap";
-import { Navigate } from "react-router-dom";
 
 const ProductCard = ({ elem }) => {
   const { deleteProduct } = useProduct();
+  const navigate = useNavigate();
+
   return (
     <div>
-      Title:{elem.title}
-      Description:{elem.description}
-      Category:{elem.category.title}
+      Title: {elem.title}
+      Description: {elem.description}
+      Category: {elem.category.title}
       <img width={150} src={elem.image} alt="" />
       {elem.is_author ? (
         <>
-          <button onClick={(s) => deleteProduct(elem.id)}>Delete</button>
-          <Button
-            onClick={() => Navigate(`/edit/${elem.id}`)}
-            variant="outlined"
-            color="primary"
-            size="medium"
-          >
-            Edit
-          </Button>
+          <button onClick={() => deleteProduct(elem.id)}>Delete</button>
+          <button onClick={() => navigate(`/edit/${elem.id}`)}>Edit</button>
         </>
       ) : null}
     </div>
