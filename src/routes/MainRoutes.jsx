@@ -5,7 +5,6 @@ import ProductList from "../components/products/ProductList";
 import EditProduct from "../components/products/EditProduct";
 import Register from "../components/auth/Register";
 import Login from "../components/auth/Login";
-import HomePage from "../pages/HomePage";
 import RecipesPage from "../pages/RecipesPage";
 import BooksPage from "../pages/BooksPage";
 import DeliciousPlacesPage from "../pages/DeliciousPlacesPage";
