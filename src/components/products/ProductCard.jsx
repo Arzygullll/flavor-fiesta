@@ -8,16 +8,27 @@ const ProductCard = ({ elem }) => {
 
   return (
     <div>
-      Title: {elem.title}
-      Description: {elem.description}
-      Category: {elem.category.title}
-      <img width={150} src={elem.image} alt="" />
-      {elem.is_author ? (
+      <h3>{elem.name}</h3>
+      <p>Description: {elem.description}</p>
+      <p>Cuisine: {elem.cuisine}</p>
+      <p>Type: {elem.type}</p>
+      <p>Cooking Time: {elem.cooking_time}</p>
+      <p>Level: {elem.level}</p>
+      <p>Owner: {elem.owner}</p>
+      <p>
+        Ingredients:{" "}
+        {typeof elem.ingridients === "string"
+          ? elem.ingridients
+          : JSON.stringify(elem.ingridients)}
+      </p>
+      <img width={150} src={elem.photo} alt={elem.name} />
+      <p>Recipe: {elem.recipe}</p>
+      {elem.is_author && (
         <>
           <button onClick={() => deleteProduct(elem.id)}>Delete</button>
           <button onClick={() => navigate(`/edit/${elem.id}`)}>Edit</button>
         </>
-      ) : null}
+      )}
     </div>
   );
 };
