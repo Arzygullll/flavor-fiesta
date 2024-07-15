@@ -16,7 +16,7 @@ const Login = () => {
     handleLogin(formData, email);
   };
   return (
-    <div>
+    <div style={{ marginTop: "80px" }}>
       <h1>Login</h1>
       <input
         onChange={(e) => setEmail(e.target.value)}

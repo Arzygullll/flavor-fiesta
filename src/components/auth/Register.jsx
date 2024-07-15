@@ -19,7 +19,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div style={{ marginTop: "80px" }}>
       <h1>Register</h1>
       <input
         onChange={(e) => setEmail(e.target.value)}
