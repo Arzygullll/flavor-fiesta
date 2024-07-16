@@ -1,5 +1,5 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { useProduct } from "../../context/ProductContextProvider";
 
@@ -8,36 +8,47 @@ const EditProduct = () => {
   const { oneProduct, getOneProduct, editProduct } = useProduct();
 
   const [product, setProduct] = useState({
-    ingridients: "",
+    ingredients: "",
     owner: "",
     name: "",
     cuisine: "",
     type: "",
     cooking_time: "",
-    photo: "",
+    photo: null,
     recipe: "",
     level: "",
     description: "",
   });
 
   useEffect(() => {
-    getOneProduct(id);
+    if (id) {
+      getOneProduct(id);
+    }
   }, [id, getOneProduct]);
 
   useEffect(() => {
     if (oneProduct) {
-      setProduct(oneProduct);
+      setProduct({
+        ...oneProduct,
+        photo: oneProduct.photo || null, // Убедитесь, что photo корректно обрабатывается
+      });
     }
   }, [oneProduct]);
 
   const handleInput = (e) => {
     const { name, value } = e.target;
-    setProduct((prev) => ({ ...prev, [name]: value }));
+    setProduct((prevProduct) => ({
+      ...prevProduct,
+      [name]: name === "cooking_time" ? Number(value) : value,
+    }));
   };
 
   const handleFileInput = (e) => {
     const { name, files } = e.target;
-    setProduct((prev) => ({ ...prev, [name]: files[0] }));
+    setProduct((prevProduct) => ({
+      ...prevProduct,
+      [name]: files[0],
+    }));
   };
 
   const handleClick = () => {
@@ -45,7 +56,15 @@ const EditProduct = () => {
     for (const key in product) {
       updatedProduct.append(key, product[key]);
     }
-    editProduct(id, updatedProduct);
+    editProduct(id, updatedProduct)
+      .then(() => {
+        console.log("Product updated successfully!");
+        // Действия после успешного обновления
+      })
+      .catch((error) => {
+        console.error("Error editing product:", error);
+        // Обработка ошибки
+      });
   };
 
   return (
@@ -59,88 +78,34 @@ const EditProduct = () => {
         justifyContent: "space-between",
       }}
     >
-      <Typography variant="h4" align="center">
+      <Typography variant="h3" align="center">
         EDIT PRODUCT
       </Typography>
-      <TextField
-        name="ingridients"
-        fullWidth
-        label="Ingridients"
-        variant="outlined"
-        onChange={handleInput}
-        value={product.ingridients}
-      />
-      <TextField
-        name="owner"
-        fullWidth
-        label="Owner"
-        variant="outlined"
-        onChange={handleInput}
-        value={product.owner}
-      />
-      <TextField
-        name="name"
-        fullWidth
-        label="Name"
-        variant="outlined"
-        onChange={handleInput}
-        value={product.name}
-      />
-      <TextField
-        name="cuisine"
-        fullWidth
-        label="Cuisine"
-        variant="outlined"
-        onChange={handleInput}
-        value={product.cuisine}
-      />
-      <TextField
-        name="type"
-        fullWidth
-        label="Type"
-        variant="outlined"
-        onChange={handleInput}
-        value={product.type}
-      />
-      <TextField
-        name="cooking_time"
-        fullWidth
-        label="Cooking Time"
-        variant="outlined"
-        onChange={handleInput}
-        value={product.cooking_time}
-      />
-      <TextField
-        name="recipe"
-        fullWidth
-        label="Recipe"
-        variant="outlined"
-        onChange={handleInput}
-        value={product.recipe}
-      />
-      <TextField
-        name="level"
-        fullWidth
-        label="Level"
-        variant="outlined"
-        onChange={handleInput}
-        value={product.level}
-      />
-      <TextField
-        name="description"
-        fullWidth
-        label="Description"
-        variant="outlined"
-        onChange={handleInput}
-        value={product.description}
-      />
+      {Object.keys(product).map((key) =>
+        key !== "photo" ? (
+          <TextField
+            key={key}
+            name={key}
+            fullWidth
+            label={key.charAt(0).toUpperCase() + key.slice(1)}
+            variant="outlined"
+            onChange={handleInput}
+            value={product[key]}
+            type={key === "cooking_time" ? "number" : "text"}
+          />
+        ) : null
+      )}
       <Button variant="contained" component="label">
         Upload Photo
         <input type="file" hidden name="photo" onChange={handleFileInput} />
       </Button>
       {product.photo && (
         <img
-          src={URL.createObjectURL(product.photo)}
+          src={
+            typeof product.photo === "string"
+              ? product.photo
+              : URL.createObjectURL(product.photo)
+          }
           alt={product.name}
           style={{
             margin: "10px 0",

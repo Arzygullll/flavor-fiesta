@@ -56,7 +56,6 @@ const ProductContextProvider = ({ children }) => {
   const addProduct = async (product) => {
     try {
       await axios.post(`${API}/dish/`, product, getConfig());
-      // Optionally, fetch products again after adding a new one
       getProducts();
     } catch (error) {
       console.log("Error adding product:", error);
@@ -66,7 +65,7 @@ const ProductContextProvider = ({ children }) => {
   const deleteProduct = async (id) => {
     try {
       await axios.delete(`${API}/dish/${id}/`, getConfig());
-      getProducts(); // Refresh product list after deletion
+      getProducts();
     } catch (error) {
       console.log("Error deleting product:", error);
     }
@@ -87,7 +86,7 @@ const ProductContextProvider = ({ children }) => {
   const editProduct = async (id, editedProduct) => {
     try {
       await axios.patch(`${API}/dish/${id}/`, editedProduct, getConfig());
-      navigate("/productList"); // Navigate after editing
+      navigate("/productList");
     } catch (error) {
       console.log("Error editing product:", error);
     }
@@ -101,6 +100,7 @@ const ProductContextProvider = ({ children }) => {
     getOneProduct,
     oneProduct: state.oneProduct,
     editProduct,
+    pages: state.pages,
   };
 
   return (

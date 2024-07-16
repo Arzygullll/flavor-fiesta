@@ -3,6 +3,7 @@ import { useProduct } from "../../context/ProductContextProvider";
 import ProductCard from "./ProductCard";
 import { Pagination } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
+import "./ProductList.css"; // Import the CSS file
 
 const ProductList = () => {
   const { products, getProducts, pages } = useProduct();
@@ -31,13 +32,15 @@ const ProductList = () => {
   }, [currentPage, pages]);
 
   return (
-    <div>
+    <div className="product-list-container">
       <h1>Product List</h1>
-      {products && products.length > 0 ? (
-        products.map((elem) => <ProductCard key={elem.id} elem={elem} />)
-      ) : (
-        <p>No products available</p>
-      )}
+      <div className="product-card-container">
+        {products && products.length > 0 ? (
+          products.map((elem) => <ProductCard key={elem.id} elem={elem} />)
+        ) : (
+          <p className="no-products-message">No products available</p>
+        )}
+      </div>
       <Pagination>
         <Pagination.Prev onClick={() => setCurrentPage(currentPage - 1)} />
         {getPagesCount().map((elem) =>

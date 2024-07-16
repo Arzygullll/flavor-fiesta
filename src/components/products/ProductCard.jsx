@@ -5,6 +5,7 @@ import { useProduct } from "../../context/ProductContextProvider";
 const ProductCard = ({ elem }) => {
   const { deleteProduct } = useProduct();
   const navigate = useNavigate();
+  console.log();
 
   return (
     <div>
@@ -16,19 +17,17 @@ const ProductCard = ({ elem }) => {
       <p>Level: {elem.level}</p>
       <p>Owner: {elem.owner}</p>
       <p>
-        Ingredients:{" "}
-        {typeof elem.ingridients === "string"
+        Ingredients:
+        {/* {typeof elem.ingridients === "string"
           ? elem.ingridients
-          : JSON.stringify(elem.ingridients)}
+          : JSON.stringify(elem.ingridients)} */}
+        {elem.ingridients[0] && elem.ingridients[0].name}
       </p>
       <img width={150} src={elem.photo} alt={elem.name} />
       <p>Recipe: {elem.recipe}</p>
-      {elem.is_author && (
-        <>
-          <button onClick={() => deleteProduct(elem.id)}>Delete</button>
-          <button onClick={() => navigate(`/edit/${elem.id}`)}>Edit</button>
-        </>
-      )}
+
+      <button onClick={() => deleteProduct(elem.id)}>Delete</button>
+      <button onClick={() => navigate(`/edit/${elem.id}`)}>Edit</button>
     </div>
   );
 };
