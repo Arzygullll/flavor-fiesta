@@ -10,12 +10,14 @@ import BooksPage from "../pages/BooksPage";
 import DeliciousPlacesPage from "../pages/DeliciousPlacesPage";
 import AboutPage from "../pages/AboutPage";
 import HeaderHomePage from "../components/homePage/HeaderHomePage";
+import ResetPassword from "../components/auth/ResetPassword";
 
 const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HeaderHomePage />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/login" element={<Login />} />
       <Route path="/addProduct" element={<AddProduct />} />
       <Route path="/productList" element={<ProductList />} />

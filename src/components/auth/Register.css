@@ -1,0 +1,104 @@
+.login-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Центрирование содержимого по горизонтали */
+  align-items: center; /* Центрирование содержимого по вертикали */
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.login-form {
+  position: relative;
+  width: 350px; /* Фиксированная ширина карточки */
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для глубины */
+  animation: fadeInUp 0.5s ease forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрирование элементов по горизонтали */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-form h1 {
+  font-size: 2rem; /* Чуть меньший размер заголовка */
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.login-form form {
+  width: 100%; /* Ширина формы на всю ширину блока */
+}
+
+.login-form input {
+  padding: 10px; /* Уменьшенный отступ для ввода */
+  margin-bottom: 15px; /* Уменьшенный отступ для ввода */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem; /* Чуть меньший размер шрифта */
+  transition: border-color 0.3s ease;
+  width: 100%; /* Ширина ввода на всю ширину блока */
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #3498db; /* Приятный синий цвет */
+}
+
+.login-form button {
+  width: 100%; /* Ширина кнопок на половину ширины блока */
+  padding: 12px;
+  background-color: #3498db; /* Приятный синий цвет */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem; /* Чуть меньший размер шрифта */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 10px; /* Добавление отступа для разделения кнопок */
+}
+
+.login-form button:hover {
+  background-color: #2980b9; /* Темный оттенок синего при наведении */
+  transform: scale(1.05);
+}
+
+.login-form button:active {
+  transform: scale(1);
+}
+
+.login-form input:hover,
+.login-form input:focus {
+  border-color: #2980b9; /* Темный оттенок синего при наведении */
+  transition: border-color 0.3s ease;
+}
+
+.logout-button {
+  background-color: #e74c3c; /* Красный цвет для кнопки выхода */
+}
+
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
