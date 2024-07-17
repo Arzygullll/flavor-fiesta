@@ -3,7 +3,7 @@ import { useProduct } from "../../context/ProductContextProvider";
 import ProductCard from "./ProductCard";
 import { Pagination } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
-import "./ProductList.css"; // Import the CSS file
+import "./ProductList.css"; // Импортируем CSS-файл для стилей
 
 const ProductList = () => {
   const { products, getProducts, pages } = useProduct();
@@ -11,50 +11,74 @@ const ProductList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
+    // Fetch products when searchParams change
     getProducts();
-  }, [searchParams]);
+  }, [searchParams, getProducts]);
 
   useEffect(() => {
+    // Update searchParams with current page
     setSearchParams({ page: currentPage });
-  }, [currentPage]);
-
-  const getPagesCount = () => {
-    const pageCountArr = [];
-    for (let i = 1; i <= pages; i++) {
-      pageCountArr.push(i);
-    }
-    return pageCountArr;
-  };
+  }, [currentPage, setSearchParams]);
 
   useEffect(() => {
+    // Ensure currentPage stays within valid range
     if (currentPage < 1) setCurrentPage(1);
     if (currentPage > pages) setCurrentPage(pages);
   }, [currentPage, pages]);
 
-  return (
-    <div className="product-list-container">
-      <h1>Product List</h1>
+  const renderProductCards = () => {
+    // Calculate index range for current page
+    const startIndex = (currentPage - 1) * 4;
+    const endIndex = startIndex + 4;
+
+    // Slice products array to get products for current page
+    const currentProducts = products.slice(startIndex, endIndex);
+
+    return (
       <div className="product-card-container">
-        {products && products.length > 0 ? (
-          products.map((elem) => <ProductCard key={elem.id} elem={elem} />)
+        {currentProducts.length > 0 ? (
+          currentProducts.map((elem) => (
+            <ProductCard key={elem.id} elem={elem} />
+          ))
         ) : (
           <p className="no-products-message">No products available</p>
         )}
       </div>
+    );
+  };
+
+  const handlePageClick = (page) => {
+    // Update currentPage when pagination button is clicked
+    setCurrentPage(page);
+  };
+
+  const renderPageItems = () => {
+    const pageCountArr = [];
+    const maxPages = Math.min(pages, 5); // Show up to 5 pages
+
+    for (let i = 1; i <= maxPages; i++) {
+      pageCountArr.push(
+        <Pagination.Item
+          key={i}
+          active={i === currentPage}
+          onClick={() => handlePageClick(i)}
+        >
+          {i}
+        </Pagination.Item>
+      );
+    }
+
+    return pageCountArr;
+  };
+
+  return (
+    <div className="product-list-container">
+      <h1>Product List</h1>
+      {renderProductCards()}
       <Pagination>
-        <Pagination.Prev onClick={() => setCurrentPage(currentPage - 1)} />
-        {getPagesCount().map((elem) =>
-          elem === currentPage ? (
-            <Pagination.Item active key={elem}>
-              {elem}
-            </Pagination.Item>
-          ) : (
-            <Pagination.Item key={elem} onClick={() => setCurrentPage(elem)}>
-              {elem}
-            </Pagination.Item>
-          )
-        )}
-        <Pagination.Next onClick={() => setCurrentPage(currentPage + 1)} />
+        <Pagination.Prev onClick={() => handlePageClick(currentPage - 1)} />
+        {renderPageItems()}
+        <Pagination.Next onClick={() => handlePageClick(currentPage + 1)} />
       </Pagination>
     </div>
   );
