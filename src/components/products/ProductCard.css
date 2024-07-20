@@ -1,0 +1,76 @@
+.dish-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.dish-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dish-info {
+  flex: 1;
+  padding: 15px;
+}
+
+.dish-image {
+  width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-left: 1px solid #ddd;
+}
+
+.dish-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.dish-description,
+.dish-recipe {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.dish-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.delete-button,
+.edit-button {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.delete-button {
+  background-color: #ff4d4d;
+  color: #fff;
+}
+
+.delete-button:hover {
+  background-color: #e60000;
+}
+
+.edit-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}

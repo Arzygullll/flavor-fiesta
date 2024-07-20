@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import { useProduct } from "../../context/ProductContextProvider";
+import { useParams, useNavigate } from "react-router-dom";
 import "./EditProduct.css";
 
 const EditProduct = () => {
   const { id } = useParams();
-  const { getOneDish, oneDish, editDish, getIngredientsList } = useProduct();
   const navigate = useNavigate();
+  const { oneDish, getOneDish, ingredientsList, getIngredientsList, editDish } =
+    useProduct();
 
-  const [ingredients, setIngredients] = useState([]);
-  const [selectedIngredients, setSelectedIngredients] = useState([]);
-  const [quantities, setQuantities] = useState([]);
   const [name, setName] = useState("");
   const [cuisine, setCuisine] = useState("");
   const [type, setType] = useState("");
@@ -19,19 +17,17 @@ const EditProduct = () => {
   const [level, setLevel] = useState("");
   const [quantPeople, setQuantPeople] = useState("");
   const [description, setDescription] = useState("");
+  const [selectedIngredients, setSelectedIngredients] = useState([]);
+  const [quantities, setQuantities] = useState([]);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        await getOneDish(id);
-      } catch (error) {
-        console.error("Error fetching dish:", error);
-      }
+      await getIngredientsList();
+      await getOneDish(id);
     };
-
     fetchData();
-  }, [id, getOneDish]);
+  }, [id]);
 
   useEffect(() => {
     if (oneDish) {
@@ -44,26 +40,37 @@ const EditProduct = () => {
       setQuantPeople(oneDish.quant_people || "");
       setDescription(oneDish.description || "");
       setSelectedIngredients(
-        oneDish.ingridients.map((ingredient) => ingredient.ingridient) || []
+        oneDish.ingridients.map((ing) => ing.ingridient) || []
       );
-      setQuantities(
-        oneDish.ingridients.map((ingredient) => ingredient.quantity) || []
-      );
+      setQuantities(oneDish.ingridients.map((ing) => ing.quantity) || []);
     }
   }, [oneDish]);
 
-  useEffect(() => {
-    const fetchIngredients = async () => {
-      try {
-        const data = await getIngredientsList();
-        setIngredients(data || []);
-      } catch (error) {
-        console.error("Error fetching ingredients:", error);
-      }
+  const handleUpdate = async () => {
+    const updatedDish = {
+      name,
+      cuisine,
+      type,
+      cooking_time: parseInt(cookingTime),
+      recipe,
+      level,
+      quant_people: parseInt(quantPeople),
+      description,
+      ingridients: selectedIngredients.map((ingridient, index) => ({
+        ingridient,
+        quantity: quantities[index],
+      })),
     };
 
-    fetchIngredients();
-  }, [getIngredientsList]);
+    try {
+      await editDish(id, updatedDish);
+      setMessage("Блюдо успешно обновлено!");
+      navigate("/productList");
+    } catch (error) {
+      setMessage("Ошибка при обновлении блюда. Попробуйте снова.");
+      console.error("Error updating dish:", error);
+    }
+  };
 
   const addIngredient = () => {
     setSelectedIngredients([...selectedIngredients, ""]);
@@ -80,32 +87,6 @@ const EditProduct = () => {
       i === index ? value : quantity
     );
     setQuantities(updatedQuantities);
-  };
-
-  const handleSubmit = async () => {
-    const updatedDish = {
-      name,
-      cuisine,
-      type,
-      cooking_time: parseInt(cookingTime),
-      recipe,
-      level,
-      quant_people: parseInt(quantPeople),
-      description,
-      ingridients: selectedIngredients.map((ingridient, index) => ({
-        ingridient: ingridient,
-        quantity: quantities[index],
-      })),
-    };
-
-    try {
-      await editDish(id, updatedDish);
-      setMessage("Блюдо успешно обновлено!");
-      navigate("/productList");
-    } catch (error) {
-      setMessage("Ошибка при обновлении блюда. Попробуйте снова.");
-      console.error("Error updating dish:", error);
-    }
   };
 
   return (
@@ -219,7 +200,7 @@ const EditProduct = () => {
               className="select-field"
             >
               <option value="">Выберите ингредиент</option>
-              {ingredients.map((ing) => (
+              {ingredientsList.map((ing) => (
                 <option key={ing.id} value={ing.id}>
                   {ing.name}
                 </option>
@@ -230,24 +211,14 @@ const EditProduct = () => {
               value={quantities[index] || ""}
               onChange={(e) => handleQuantityChange(index, e.target.value)}
               placeholder="Количество"
-              className="quantity-input"
             />
-            <button
-              onClick={() => removeIngredient(index)}
-              className="remove-button"
-            >
-              Удалить
-            </button>
+            <button onClick={() => removeIngredient(index)}>Удалить</button>
           </div>
         ))}
-        <button onClick={addIngredient} className="add-button">
-          Добавить ингредиент
-        </button>
+        <button onClick={addIngredient}>Добавить ингредиент</button>
       </div>
 
-      <button onClick={handleSubmit} className="submit-button">
-        Сохранить изменения
-      </button>
+      <button onClick={handleUpdate}>Сохранить изменения</button>
     </div>
   );
 };

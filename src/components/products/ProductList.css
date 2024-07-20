@@ -1,16 +1,87 @@
 .product-list-container {
-  margin: 20px;
+  margin-top: 83px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+/* Заголовок списка */
+.product-list-container h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
+/* Контейнер для карточек продуктов */
 .product-card-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Индивидуальная карточка продукта */
+.product-card {
+  background-color: #fafafa;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Стиль пагинации */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.pagination .page-item {
+  margin: 0 8px;
+}
+
+.pagination .page-item .page-link {
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  color: #007bff;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007bff;
+  color: #ffffff;
+  border: 1px solid #007bff;
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: #e0e0e0;
+  color: #0056b3;
+}
+
+.pagination .page-item .page-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+/* Сообщение при отсутствии продуктов */
 .no-products-message {
-  color: red;
-  font-weight: bold;
   text-align: center;
+  color: #888;
+  font-size: 1.3rem;
   margin-top: 20px;
 }
