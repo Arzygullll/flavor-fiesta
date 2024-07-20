@@ -6,14 +6,14 @@ import { useSearchParams } from "react-router-dom";
 import "./ProductList.css"; // Импортируем CSS-файл для стилей
 
 const ProductList = () => {
-  const { products, getProducts, pages } = useProduct();
+  const { dishes, getDishes } = useProduct();
   const [currentPage, setCurrentPage] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    // Fetch products when searchParams change
-    getProducts();
-  }, [searchParams, getProducts]);
+    // Fetch dishes when searchParams change
+    getDishes();
+  }, [searchParams, getDishes]);
 
   useEffect(() => {
     // Update searchParams with current page
@@ -23,38 +23,47 @@ const ProductList = () => {
   useEffect(() => {
     // Ensure currentPage stays within valid range
     if (currentPage < 1) setCurrentPage(1);
-    if (currentPage > pages) setCurrentPage(pages);
-  }, [currentPage, pages]);
+    if (dishes.length && currentPage > Math.ceil(dishes.length / 4))
+      setCurrentPage(Math.ceil(dishes.length / 4));
+  }, [currentPage, dishes]);
+
+  console.log("Dishes state:", dishes); // Отладочная информация
 
   const renderProductCards = () => {
-    // Calculate index range for current page
+    // Проверка, является ли dishes массивом
+    if (!Array.isArray(dishes)) {
+      return <p className="no-products-message">Нет доступных блюд</p>;
+    }
+
+    // Проверка, пуст ли массив dishes
+    if (dishes.length === 0) {
+      return <p className="no-products-message">Нет доступных блюд</p>;
+    }
+
     const startIndex = (currentPage - 1) * 4;
     const endIndex = startIndex + 4;
-
-    // Slice products array to get products for current page
-    const currentProducts = products.slice(startIndex, endIndex);
+    const currentDishes = dishes.slice(startIndex, endIndex);
 
     return (
       <div className="product-card-container">
-        {currentProducts.length > 0 ? (
-          currentProducts.map((elem) => (
-            <ProductCard key={elem.id} elem={elem} />
-          ))
-        ) : (
-          <p className="no-products-message">No products available</p>
-        )}
+        {currentDishes.map((elem) => (
+          <ProductCard key={elem.id} elem={elem} />
+        ))}
       </div>
     );
   };
 
   const handlePageClick = (page) => {
-    // Update currentPage when pagination button is clicked
     setCurrentPage(page);
   };
 
   const renderPageItems = () => {
+    if (!Array.isArray(dishes)) {
+      return null;
+    }
+
     const pageCountArr = [];
-    const maxPages = Math.min(pages, 5); // Show up to 5 pages
+    const maxPages = Math.ceil(dishes.length / 4);
 
     for (let i = 1; i <= maxPages; i++) {
       pageCountArr.push(
@@ -73,7 +82,7 @@ const ProductList = () => {
 
   return (
     <div className="product-list-container">
-      <h1>Product List</h1>
+      <h1>Список блюд</h1>
       {renderProductCards()}
       <Pagination>
         <Pagination.Prev onClick={() => handlePageClick(currentPage - 1)} />
