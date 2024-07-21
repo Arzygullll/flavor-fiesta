@@ -11,6 +11,7 @@ import DeliciousPlacesPage from "../pages/DeliciousPlacesPage";
 import AboutPage from "../pages/AboutPage";
 import HeaderHomePage from "../components/homePage/HeaderHomePage";
 import ResetPassword from "../components/auth/ResetPassword";
+import CartPage from "../pages/CartPage";
 
 const MainRoutes = () => {
   return (
@@ -26,6 +27,7 @@ const MainRoutes = () => {
       <Route path="/books" element={<BooksPage />} />
       <Route path="/deliciousPlaces" element={<DeliciousPlacesPage />} />
       <Route path="/about" element={<AboutPage />} />
+      <Route path="/cart" element={<CartPage />} />
 
       <Route path="*" element={<h1>NOT FOUND PAGE</h1>} />
     </Routes>

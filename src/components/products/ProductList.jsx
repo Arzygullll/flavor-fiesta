@@ -3,7 +3,7 @@ import { useProduct } from "../../context/ProductContextProvider";
 import ProductCard from "./ProductCard";
 import { Pagination } from "react-bootstrap";
 import { useSearchParams } from "react-router-dom";
-import "./ProductList.css"; // Импортируем CSS-файл для стилей
+import "./ProductList.css";
 
 const ProductList = () => {
   const { dishes, getDishes } = useProduct();
@@ -11,37 +11,32 @@ const ProductList = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
-    // Fetch dishes when searchParams change
     getDishes();
   }, [searchParams, getDishes]);
 
   useEffect(() => {
-    // Update searchParams with current page
     setSearchParams({ page: currentPage });
   }, [currentPage, setSearchParams]);
 
   useEffect(() => {
-    // Ensure currentPage stays within valid range
     if (currentPage < 1) setCurrentPage(1);
-    if (dishes.length && currentPage > Math.ceil(dishes.length / 4))
-      setCurrentPage(Math.ceil(dishes.length / 4));
+    if (dishes.length && currentPage > Math.ceil(dishes.length / 3))
+      setCurrentPage(Math.ceil(dishes.length / 3));
   }, [currentPage, dishes]);
 
-  console.log("Dishes state:", dishes); // Отладочная информация
+  console.log("Dishes state:", dishes);
 
   const renderProductCards = () => {
-    // Проверка, является ли dishes массивом
     if (!Array.isArray(dishes)) {
       return <p className="no-products-message">Нет доступных блюд</p>;
     }
 
-    // Проверка, пуст ли массив dishes
     if (dishes.length === 0) {
       return <p className="no-products-message">Нет доступных блюд</p>;
     }
 
-    const startIndex = (currentPage - 1) * 4;
-    const endIndex = startIndex + 4;
+    const startIndex = (currentPage - 1) * 3;
+    const endIndex = startIndex + 3;
     const currentDishes = dishes.slice(startIndex, endIndex);
 
     return (

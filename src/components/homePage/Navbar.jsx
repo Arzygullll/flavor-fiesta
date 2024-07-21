@@ -10,11 +10,15 @@ import {
   TextField,
   Box,
   Container,
+  Badge,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContextProvider";
+import { getProductsCountInCart } from "../../helpers/functions";
+import { useCart } from "../../context/CartContextProvider";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+
 const Navbar = () => {
   const { currentUser, checkAuth, handleLogOut } = useAuth();
   useEffect(() => {
@@ -25,6 +29,12 @@ const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorEl2, setAnchorEl2] = React.useState(null);
   const [searchAnchorEl, setSearchAnchorEl] = React.useState(null);
+
+  const [badgeCount, setBadgeCount] = React.useState(0);
+  const { addProductToCart } = useCart();
+  React.useEffect(() => {
+    setBadgeCount(getProductsCountInCart);
+  }, [addProductToCart]);
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -154,6 +164,17 @@ const Navbar = () => {
           >
             Войти
           </MenuItem>
+          <Link to={"/cart"}>
+            <Badge badgeContent={badgeCount} color="success">
+              <ShoppingBagIcon
+                sx={{
+                  marginBottom: "10px",
+                  marginLeft: "15px",
+                  color: "black",
+                }}
+              />
+            </Badge>
+          </Link>
         </Menu>
         <Menu
           anchorEl={anchorEl2}
@@ -166,7 +187,7 @@ const Navbar = () => {
               handleMenuClose();
             }}
           >
-            Добавить новый рецепт
+            Добавить новое блюдо
           </MenuItem>
           <MenuItem
             onClick={() => {

@@ -6,14 +6,17 @@ import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProductContextProvider from "./context/ProductContextProvider";
 import AuthContextProvider from "./context/AuthContextProvider";
+import CartContextProvider from "./context/CartContextProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <ProductContextProvider>
-      <AuthContextProvider>
-        <App />
-      </AuthContextProvider>
-    </ProductContextProvider>
+    <AuthContextProvider>
+      <ProductContextProvider>
+        <CartContextProvider>
+          <App />
+        </CartContextProvider>
+      </ProductContextProvider>
+    </AuthContextProvider>
   </BrowserRouter>
 );

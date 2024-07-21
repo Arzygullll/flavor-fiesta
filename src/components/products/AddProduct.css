@@ -1,5 +1,3 @@
-/* AddProduct.css */
-
 .add-product-container {
   margin-top: 80px;
   padding: 20px;
@@ -7,8 +5,8 @@
   border: 1px solid #e9ecef;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-height: calc(100vh - 160px); /* Максимальная высота контейнера */
-  overflow-y: auto; /* Включаем вертикальный скролл при необходимости */
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
 }
 
 .add-product-container h2 {

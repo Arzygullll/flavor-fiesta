@@ -10,8 +10,11 @@ import {
   Grow,
   Pagination,
   TextField,
+  Stack,
 } from "@mui/material";
-import { Search } from "@mui/icons-material";
+import { Favorite, Search } from "@mui/icons-material";
+import { useCart } from "../context/CartContextProvider";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const booksData = [
   {
@@ -259,6 +262,11 @@ const BooksPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const booksPerPage = 8;
+  const { addProductToCart, checkProductInCart, deleteProductFromCart } =
+    useCart();
+  const handleDelete = (book) => {
+    deleteProductFromCart(book.id);
+  };
 
   const openModal = (book) => {
     setSelectedBook(book);
@@ -362,6 +370,18 @@ const BooksPage = () => {
                     <Typography variant="h6" style={{ fontSize: "18px" }}>
                       {book.title}
                     </Typography>
+                    <Stack direction="row">
+                      <AddShoppingCartIcon
+                        sx={{
+                          color: checkProductInCart(book.id)
+                            ? "red"
+                            : "inherit",
+                        }}
+                        onClick={() => addProductToCart(book)}
+                      >
+                        <Favorite />
+                      </AddShoppingCartIcon>
+                    </Stack>
                   </CardContent>
                 </Card>
               </Grow>
