@@ -16,6 +16,7 @@ const AddProduct = () => {
   const [quantPeople, setQuantPeople] = useState("");
   const [description, setDescription] = useState("");
   const [message, setMessage] = useState("");
+  const [photo, setPhoto] = useState("");
 
   useEffect(() => {
     const fetchIngredients = async () => {
@@ -49,6 +50,22 @@ const AddProduct = () => {
   };
 
   const handleSubmit = async () => {
+    // Проверка на пустоту всех полей
+    if (
+      !name ||
+      !cuisine ||
+      !type ||
+      !cookingTime ||
+      !recipe ||
+      !level ||
+      !quantPeople ||
+      !description ||
+      !photo
+    ) {
+      setMessage("Пожалуйста, заполните все поля.");
+      return;
+    }
+
     const newDish = {
       name,
       cuisine,
@@ -58,6 +75,7 @@ const AddProduct = () => {
       level,
       quant_people: parseInt(quantPeople),
       description,
+      photo,
       ingridients: selectedIngredients.map((ingridient, index) => ({
         ingridient: ingridient,
         quantity: quantities[index],
@@ -77,11 +95,12 @@ const AddProduct = () => {
       setLevel("");
       setQuantPeople("");
       setDescription("");
+      setPhoto("");
       setSelectedIngredients([]);
       setQuantities([]);
     } catch (error) {
       setMessage("Ошибка при добавлении блюда. Попробуйте снова.");
-      console.error("Error adding dish:", error); // Ловим ошибки добавления блюда
+      console.error("Error adding dish:", error);
     }
   };
 
@@ -178,6 +197,16 @@ const AddProduct = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           className="textarea-field"
+        />
+      </div>
+      <div>
+        <label>Фото:</label>
+        <input
+          type="file"
+          value={photo}
+          onChange={(e) => setPhoto(e.target.value)}
+          placeholder="Выбрать фото"
+          className="input-field"
         />
       </div>
 

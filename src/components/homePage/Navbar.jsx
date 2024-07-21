@@ -15,8 +15,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContextProvider";
-import "./Navbar.css";
-
 const Navbar = () => {
   const { currentUser, checkAuth, handleLogOut } = useAuth();
   useEffect(() => {
@@ -54,6 +52,15 @@ const Navbar = () => {
     boxShadow: "none",
     "&:hover": {
       backgroundColor: "transparent",
+    },
+  };
+
+  const logoutButtonStyles = {
+    color: "#ffffff", // Цвет текста кнопки
+    backgroundColor: "#e36414", // Цвет фона кнопки
+    marginLeft: "10px", // Отступ слева для разделения от имени пользователя
+    "&:hover": {
+      backgroundColor: "#132a13", // Цвет фона кнопки при наведении
     },
   };
 
@@ -159,7 +166,7 @@ const Navbar = () => {
               handleMenuClose();
             }}
           >
-            Add Product
+            Добавить новый рецепт
           </MenuItem>
           <MenuItem
             onClick={() => {
@@ -167,17 +174,10 @@ const Navbar = () => {
               handleMenuClose();
             }}
           >
-            Product List
+            Рецепты
           </MenuItem>
         </Menu>
-        <Box sx={{ ml: "auto" }}>
-          <IconButton
-            color="inherit"
-            onClick={handleSearchOpen}
-            aria-label="search"
-          >
-            <SearchIcon />
-          </IconButton>
+        <Box sx={{ ml: "auto", display: "flex", alignItems: "center" }}>
           <Menu
             anchorEl={searchAnchorEl}
             open={Boolean(searchAnchorEl)}
@@ -194,15 +194,19 @@ const Navbar = () => {
               />
             </Box>
           </Menu>
+          <Typography variant="h6" component="div" sx={{ mr: "10px" }}>
+            {currentUser ? currentUser : "No auth user"}
+          </Typography>
+          {currentUser && (
+            <Button
+              color="inherit"
+              onClick={handleLogOut}
+              sx={logoutButtonStyles}
+            >
+              Logout
+            </Button>
+          )}
         </Box>
-        <Typography variant="h6" component="div">
-          {currentUser ? currentUser : "No auth user"}
-        </Typography>
-        {currentUser && (
-          <Button color="inherit" onClick={handleLogOut}>
-            Logout
-          </Button>
-        )}
       </Toolbar>
     </AppBar>
   );

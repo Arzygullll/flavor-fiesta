@@ -8,7 +8,6 @@ const EditProduct = () => {
   const navigate = useNavigate();
   const { oneDish, getOneDish, ingredientsList, getIngredientsList, editDish } =
     useProduct();
-
   const [name, setName] = useState("");
   const [cuisine, setCuisine] = useState("");
   const [type, setType] = useState("");
@@ -20,6 +19,7 @@ const EditProduct = () => {
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [quantities, setQuantities] = useState([]);
   const [message, setMessage] = useState("");
+  const [photo, setPhoto] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,6 +39,7 @@ const EditProduct = () => {
       setLevel(oneDish.level || "");
       setQuantPeople(oneDish.quant_people || "");
       setDescription(oneDish.description || "");
+      setPhoto(oneDish.photo || "");
       setSelectedIngredients(
         oneDish.ingridients.map((ing) => ing.ingridient) || []
       );
@@ -56,6 +57,7 @@ const EditProduct = () => {
       level,
       quant_people: parseInt(quantPeople),
       description,
+      photo,
       ingridients: selectedIngredients.map((ingridient, index) => ({
         ingridient,
         quantity: quantities[index],
@@ -180,6 +182,15 @@ const EditProduct = () => {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           className="textarea-field"
+        />
+      </div>
+      <div>
+        <label>Фото:</label>
+        <input
+          type="file"
+          onChange={(e) => setPhoto(e.target.files[0])}
+          placeholder="Выбрать фото"
+          className="input-field"
         />
       </div>
 

@@ -11,7 +11,7 @@ const ProductContextProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const INIT_STATE = {
-    dishes: [], // Initialize dishes as an empty array
+    dishes: [],
     oneDish: null,
     ingredientsList: [],
   };
