@@ -81,14 +81,16 @@ const ProductContextProvider = ({ children }) => {
     try {
       const response = await axios.post(`${API}/dish/`, dish, getConfig());
       if (response.status === 201) {
-        await getDishes();
-        navigate("/productList");
+        // await getDishes();
+        // navigate("/productList");
+        return response.data; // Возвращаем созданное блюдо
       }
     } catch (error) {
       console.error(
         "Ошибка при добавлении блюда:",
         error.response ? error.response.data : error.message
       );
+      throw error;
     }
   };
   // const addDish = async (dish) => {
@@ -125,6 +127,34 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
+  const uploadDishImage = async (id, file) => {
+    try {
+      const formData = new FormData();
+      formData.append("photo", file);
+
+      const response = await axios.patch(`${API}/dish/${id}/`, formData, {
+        ...getConfig(),
+        headers: {
+          ...getConfig().headers,
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log(
+        response,
+        "responseresponseresponseresponseresponseresponseresponseresponseresponseresponseresponseresponseresponseresponseresponseresponseresponseresponseresponse"
+      );
+      if (response.status === 200) {
+        await getDishes();
+        navigate("/productList");
+      }
+    } catch (error) {
+      console.error(
+        "Ошибка при загрузке изображения блюда:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  };
+
   const values = {
     dishes: state.dishes,
     oneDish: state.oneDish,
@@ -135,6 +165,7 @@ const ProductContextProvider = ({ children }) => {
     deleteDish,
     editDish,
     getIngredientsList,
+    uploadDishImage,
   };
 
   return (

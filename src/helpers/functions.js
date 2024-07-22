@@ -5,17 +5,21 @@ export const getLocalStorage = () => {
 };
 // функция для подсчета стоимости за одну позицию
 export const calcSubPrice = (elem) => {
-  return elem.count * elem.item.price;
+  return elem.count * Number(elem.item.price);
 };
 
 export const calcTotalPrice = (products) => {
   const totalPrice = products.reduce((acc, curr) => {
     if (curr.subPrice === 0) {
-      return acc + curr.item.price;
+      return Number(acc) + Number(curr.item.price);
     } else {
-      return acc + curr.subPrice;
+      return Number(acc) + Number(curr.subPrice);
     }
   }, 0);
+  console.log(
+    totalPrice,
+    "totalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPrice"
+  );
   return totalPrice;
 };
 // функция для вывода кол-во товаров в корзине
