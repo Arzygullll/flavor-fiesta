@@ -91,6 +91,14 @@ const ProductContextProvider = ({ children }) => {
       );
     }
   };
+  // const addDish = async (dish) => {
+  //   try {
+  //     await axios.post(`${API}/dish/`, dish, getConfig());
+  //     navigate("/productList");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   const deleteDish = async (id) => {
     try {

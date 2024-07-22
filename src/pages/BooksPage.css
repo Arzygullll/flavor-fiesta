@@ -1,0 +1,112 @@
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Контейнер для книг */
+.books-container {
+  padding: 10px; /* Уменьшено отступы для меньших экранов */
+}
+
+/* Стили для карточек книг */
+.book-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 5px; /* Уменьшено отступы для меньших экранов */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+  width: 100%;
+  height: auto;
+}
+
+.book-card-content {
+  padding: 8px; /* Уменьшены отступы для меньших экранов */
+}
+
+.book-card-title {
+  font-size: 1em; /* Уменьшен размер шрифта для меньших экранов */
+  margin: 0;
+}
+
+.book-card-author {
+  color: #555;
+  font-size: 0.9em; /* Уменьшен размер шрифта для меньших экранов */
+}
+
+.book-card-description {
+  margin: 8px 0; /* Уменьшены отступы для меньших экранов */
+  color: #777;
+  font-size: 0.8em; /* Уменьшен размер шрифта для меньших экранов */
+}
+
+.book-card-price {
+  font-size: 1em; /* Уменьшен размер шрифта для меньших экранов */
+  color: #333;
+  margin-top: 8px; /* Уменьшены отступы для меньших экранов */
+}
+
+/* Grid layout для книг */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(180px, 1fr)
+  ); /* Уменьшен минимальный размер колонки */
+  gap: 10px; /* Уменьшено расстояние между карточками */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .books-grid {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(120px, 1fr)
+    ); /* Уменьшен минимальный размер колонки */
+  }
+}
+
+@media (max-width: 320px) {
+  .book-card {
+    margin: 2px; /* Уменьшены отступы для очень маленьких экранов */
+  }
+
+  .book-card-content {
+    padding: 6px; /* Уменьшены отступы для очень маленьких экранов */
+  }
+
+  .book-card-title {
+    font-size: 0.9em; /* Дополнительное уменьшение размера шрифта */
+  }
+
+  .book-card-author {
+    font-size: 0.8em; /* Дополнительное уменьшение размера шрифта */
+  }
+
+  .book-card-description {
+    font-size: 0.7em; /* Дополнительное уменьшение размера шрифта */
+  }
+
+  .book-card-price {
+    font-size: 0.9em; /* Дополнительное уменьшение размера шрифта */
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(100px, 1fr)
+    ); /* Уменьшен минимальный размер колонки для маленьких экранов */
+  }
+}

@@ -1,0 +1,180 @@
+/* Основные стили */
+.about-page {
+  padding: 20px;
+  background-color: rgb(40, 40, 40);
+}
+
+/* Цвет текста */
+h1,
+h3,
+h4 {
+  color: white;
+}
+
+/* Дополнительные стили для заголовков */
+h1,
+h3 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+h3 {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 5s ease-out;
+}
+
+.slide-from-left {
+  animation: slideFromLeft 5s ease-out;
+}
+
+.slide-from-right {
+  animation: slideFromRight 5s ease-out;
+}
+
+.blink {
+  animation: blink 3s step-start infinite;
+}
+
+/* Анимации с задержкой */
+.fade-in-delay-1 {
+  animation: fadeIn 5s ease-out 3s forwards;
+}
+
+.fade-in-delay-2 {
+  animation: fadeIn 5s ease-out 6s forwards;
+}
+
+.slide-from-left-delay-1 {
+  animation: slideFromLeft 5s ease-out 3s forwards;
+}
+
+.slide-from-left-delay-2 {
+  animation: slideFromLeft 5s ease-out 6s forwards;
+}
+
+.slide-from-right-delay-1 {
+  animation: slideFromRight 5s ease-out 3s forwards;
+}
+
+.slide-from-right-delay-2 {
+  animation: slideFromRight 5s ease-out 6s forwards;
+}
+
+.blink-delay {
+  animation: blink 3s step-start infinite;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 60px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  .about-page {
+    padding: 10px;
+  }
+
+  .about-page div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-page img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .about-page h4 {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .fade-in,
+  .slide-from-left,
+  .slide-from-right,
+  .blink {
+    animation-duration: 4s;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  .about-page {
+    padding: 5px;
+  }
+}

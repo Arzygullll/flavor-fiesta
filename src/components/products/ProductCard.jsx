@@ -1,42 +1,178 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProduct } from "../../context/ProductContextProvider";
-import "./ProductCard.css"; // Импортируем CSS-файл для стилей карточек
+import {
+  Button,
+  Typography,
+  Stack,
+  IconButton,
+  TextField,
+  Rating,
+} from "@mui/material";
+import ThumbUpAltOutlined from "@mui/icons-material/ThumbUpAltOutlined";
+import ThumbUpAlt from "@mui/icons-material/ThumbUpAlt";
+import "./ProductCard.css";
 
 const ProductCard = ({ elem }) => {
   const { deleteDish } = useProduct();
   const navigate = useNavigate();
+  const [liked, setLiked] = useState(false);
+  const [likesCount, setLikesCount] = useState(0);
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
+  const [comments, setComments] = useState([]);
+  const id = elem.id;
+
+  useEffect(() => {
+    const savedLiked = localStorage.getItem(`liked_${id}`);
+    const savedLikesCount = localStorage.getItem(`likesCount_${id}`);
+    const savedRating = localStorage.getItem(`rating_${id}`);
+    const savedComments = localStorage.getItem(`comments_${id}`);
+
+    setLiked(savedLiked === "true");
+    setLikesCount(savedLikesCount ? parseInt(savedLikesCount) : 0);
+    setRating(savedRating ? parseFloat(savedRating) : 0);
+    setComments(savedComments ? JSON.parse(savedComments) : []);
+  }, [id]);
+
+  useEffect(() => {
+    localStorage.setItem(`liked_${id}`, liked);
+    localStorage.setItem(`likesCount_${id}`, likesCount);
+    localStorage.setItem(`rating_${id}`, rating);
+    localStorage.setItem(`comments_${id}`, JSON.stringify(comments));
+  }, [liked, likesCount, rating, comments, id]);
+
+  const handleLike = () => {
+    if (!liked) {
+      setLiked(true);
+      setLikesCount((prevCount) => prevCount + 1);
+    }
+  };
+
+  const handleRating = (newRating) => {
+    setRating(newRating);
+  };
+
+  const handleCommentSubmit = (e) => {
+    e.preventDefault();
+    if (comment.trim() !== "") {
+      setComments((prevComments) => [
+        ...prevComments,
+        { id: Date.now(), content: comment },
+      ]);
+      setComment("");
+    }
+  };
+
+  const handleDeleteComment = (commentId) => {
+    setComments((prevComments) =>
+      prevComments.filter((c) => c.id !== commentId)
+    );
+  };
+
+  const handleEdit = () => {
+    navigate(`/edit/${id}`);
+  };
 
   return (
     <div className="dish-card">
+      <img className="dish-image" src={elem.photo} alt={elem.name} />
       <div className="dish-info">
-        <h3 className="dish-title">{elem.name}</h3>
-        <p className="dish-description">Description: {elem.description}</p>
-        <p>Cuisine: {elem.cuisine}</p>
-        <p>Type: {elem.type}</p>
-        <p>Cooking Time: {elem.cooking_time} min</p>
-        <p>Level: {elem.level}</p>
-        <p>Owner: {elem.owner}</p>
-        <p>
-          Ingredients:{" "}
+        <Typography variant="h5" component="div" className="dish-title">
+          {elem.name}
+        </Typography>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          className="dish-description"
+        >
+          Описание: {elem.description}
+        </Typography>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          className="dish-description"
+        >
+          Кухня: {elem.cuisine} <br />
+          Тип: {elem.type} <br />
+          Время готовки: {elem.cooking_time} мин <br />
+          Уровень: {elem.level} <br />
+          Владелец: {elem.owner} <br />
+          Ингредиенты:{" "}
           {elem.ingredients &&
             elem.ingredients.length > 0 &&
-            elem.ingredients[0].name}
-        </p>
-        <p className="dish-recipe">Recipe: {elem.recipe}</p>
-        <div className="dish-buttons">
-          <button className="delete-button" onClick={() => deleteDish(elem.id)}>
-            Delete
-          </button>
-          <button
-            className="edit-button"
-            onClick={() => navigate(`/edit/${elem.id}`)}
+            elem.ingredients[0].name}{" "}
+          <br />
+          Рецепт: {elem.recipe}
+        </Typography>
+        <Stack
+          direction="row"
+          spacing={2}
+          alignItems="center"
+          className="dish-buttons"
+        >
+          <IconButton
+            className={`animated-icon-button ${liked ? "liked" : ""}`}
+            onClick={handleLike}
           >
-            Edit
-          </button>
-        </div>
+            {liked ? (
+              <ThumbUpAlt color="primary" />
+            ) : (
+              <ThumbUpAltOutlined color="action" />
+            )}
+          </IconButton>
+          <Typography variant="body2" color="text.secondary">
+            {likesCount} {likesCount === 1 ? "лайк" : "лайков"}
+          </Typography>
+          <Button
+            variant="contained"
+            color="error"
+            className="delete-button"
+            onClick={() => deleteDish(id)}
+          >
+            Удалить
+          </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            className="edit-button"
+            onClick={handleEdit}
+          >
+            Редактировать
+          </Button>
+        </Stack>
+        <Rating
+          name="dish-rating"
+          value={rating}
+          onChange={(e, newValue) => handleRating(newValue)}
+        />
+        <form onSubmit={handleCommentSubmit} className="comments-section">
+          <TextField
+            label="Добавьте комментарий"
+            variant="outlined"
+            fullWidth
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+          />
+          <Button type="submit" variant="contained" color="primary">
+            Добавить
+          </Button>
+          <div className="comments-list">
+            {comments.map((c) => (
+              <div key={c.id} className="comment-item">
+                <Typography variant="body2">{c.content}</Typography>
+                <Button
+                  variant="text"
+                  color="error"
+                  onClick={() => handleDeleteComment(c.id)}
+                >
+                  Удалить
+                </Button>
+              </div>
+            ))}
+          </div>
+        </form>
       </div>
-      <img className="dish-image" src={elem.photo} alt={elem.name} />
     </div>
   );
 };

@@ -67,7 +67,7 @@
 }
 
 .login-form button {
-  width: 100%; /* Ширина кнопок на половину ширины блока */
+  width: 100%; /* Ширина кнопок на всю ширину блока */
   padding: 12px;
   background-color: #3498db; /* Приятный синий цвет */
   color: white;
@@ -101,4 +101,57 @@
 .loading {
   opacity: 0.6;
   pointer-events: none;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Mobile Devices */
+@media (max-width: 600px) {
+  .login-form {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .login-form h1 {
+    font-size: 1.5rem;
+  }
+
+  .login-form input {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .login-form button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+  .login-form {
+    max-width: 80%;
+    padding: 18px;
+  }
+
+  .login-form h1 {
+    font-size: 1.75rem;
+  }
+
+  .login-form input {
+    padding: 9px;
+    font-size: 0.95rem;
+  }
+
+  .login-form button {
+    padding: 11px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Desktops */
+@media (min-width: 901px) {
+  .login-form {
+    max-width: 350px; /* Keeps the original max-width for larger screens */
+  }
 }
