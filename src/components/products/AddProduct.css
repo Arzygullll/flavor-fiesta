@@ -1,4 +1,4 @@
-.add-product-container {
+/* .add-product-container {
   margin-top: 80px;
   padding: 20px;
   background-color: #f8f9fa;
@@ -108,6 +108,167 @@
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+.add-product-container {
+  margin-top: 80px;
+  padding: 30px;
+  background-color: rgba(185, 181, 181, 0.7); /* Прозрачный фон */
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  position: relative;
+}
+
+.add-product-container h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+  color: #212529;
+  font-family: "Playfair Display", serif;
+  border-bottom: 2px solid #0d151e;
+  padding-bottom: 10px;
+}
+
+.add-product-container p {
+  color: #dc3545;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.add-product-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #495057;
+}
+
+.add-product-container input[type="text"],
+.add-product-container input[type="number"],
+.add-product-container textarea,
+.add-product-container select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  border: 1px solid #ced4da;
+  border-radius: 8px; /* Более округлые углы */
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Поля ввода с большей прозрачностью */
+  color: #212529; /* Текстовые поля */
+}
+
+.add-product-container input[type="text"]:focus,
+.add-product-container input[type="number"]:focus,
+.add-product-container textarea:focus,
+.add-product-container select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.add-product-container textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.add-product-container select {
+  width: calc(100% - 2px);
+}
+
+.add-product-container button {
+  padding: 14px 28px;
+  background-color: #101924;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px; /* Более округлые углы */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 12px; /* Расстояние между кнопками */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для кнопок */
+}
+
+.add-product-container button:hover {
+  background-color: #3d5471;
+}
+
+.add-product-container .ingredient-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 10px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Ингредиенты с большей прозрачностью */
+}
+
+.add-product-container .ingredient-row select {
+  flex: 1;
+  margin-right: 14px;
+}
+
+.add-product-container .ingredient-row input[type="number"] {
+  width: 130px;
+  margin-right: 14px;
+}
+
+.add-product-container .ingredient-row button {
+  padding: 8px 18px;
+  background-color: #dc3545;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px; /* Более округлые углы */
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для кнопок */
+}
+
+.add-product-container .ingredient-row button:hover {
+  background-color: #c82333;
+}
+
+.add-product-container .loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7); /* Накладка с прозрачностью */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  border-radius: 12px;
+}
+
+.add-product-container .loading-overlay .loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #00152b;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   animation: spin 1s linear infinite;
 }
 

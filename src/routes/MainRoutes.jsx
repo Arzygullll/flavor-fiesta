@@ -20,12 +20,12 @@ const MainRoutes = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/addProduct" element={<AddProduct />} />
-      <Route path="/productList" element={<ProductList />} />
+      <Route path="/add-product" element={<AddProduct />} />
+      <Route path="/product-list" element={<ProductList />} />
       <Route path="/edit/:id" element={<EditProduct />} />
       <Route path="/recipes" element={<RecipesPage />} />
       <Route path="/books" element={<BooksPage />} />
-      <Route path="/deliciousPlaces" element={<DeliciousPlacesPage />} />
+      <Route path="/delicious-places" element={<DeliciousPlacesPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/cart" element={<CartPage />} />
 

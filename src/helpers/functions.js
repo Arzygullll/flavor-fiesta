@@ -16,11 +16,8 @@ export const calcTotalPrice = (products) => {
       return Number(acc) + Number(curr.subPrice);
     }
   }, 0);
-  console.log(
-    totalPrice,
-    "totalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPrice"
-  );
-  return totalPrice;
+  // console.log(totalPrice, 'totalPricetotalPricetotalPricetotalPricetotalPricetotalPricetotalPrice')
+  // return totalPrice;
 };
 // функция для вывода кол-во товаров в корзине
 export const getProductsCountInCart = () => {

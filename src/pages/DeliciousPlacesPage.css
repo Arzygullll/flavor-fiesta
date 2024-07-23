@@ -116,11 +116,10 @@ body {
   }
 }
 
+/* Стили для футера  */
 .footer {
   height: 250px;
   width: 100vw;
-  margin: 0;
-  /* Убираем все внешние отступы */
   margin-left: calc(50% - 50vw);
   background: linear-gradient(135deg, #222222, #333333);
   color: #f0f0f0;
@@ -150,15 +149,54 @@ body {
 
 .footer-content {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  padding: 0 0px;
+}
+
+.footer-social,
+.footer-contacts,
+.footer-text {
+  flex: 1;
+  margin: 10px 0;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.footer-social {
+  gap: 15px;
+}
+
+.footer-social a {
+  color: #f0f0f0;
+  font-size: 1.5em;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #ffcc00;
+}
+
+.footer-social img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+  margin-left: 50px;
+}
+
+.footer-contacts {
+  margin: 0 15px 50px 20px;
+}
+
 .footer-content h5 {
+  margin-top: 20px;
   font-size: 1.4em;
   font-family: "Playfair Display", serif;
-  margin: 0;
-  /* Убираем все внешние отступы */
   margin-bottom: 10px;
   transition: color 0.3s;
 }
@@ -168,12 +206,12 @@ body {
 }
 
 .footer-content p {
-  width: 100%;
-  max-width: 1000px;
+  width: 120%;
+  max-width: 800px;
   font-size: 1em;
   margin: 0;
-  /* Убираем все внешние отступы */
   transition: color 0.3s;
+  text-align: center;
 }
 
 .footer-content p:hover {
@@ -186,27 +224,6 @@ body {
   justify-content: center;
   gap: 10px;
 }
-
-.decor-icon {
-  font-size: 2em;
-  color: #ffcc00;
-  transition: transform 0.3s, color 0.3s;
-}
-
-.decor-icon:hover {
-  transform: rotate(20deg);
-  color: #ffffff;
-}
-
 .footer-credits {
-  margin: 0;
-  /* Убираем все внешние отступы */
-  margin-top: 5px;
-  font-size: 0.8em;
-  opacity: 0.8;
-  transition: opacity 0.3s;
-}
-
-.footer-credits:hover {
-  opacity: 1;
+  margin-right: 40px;
 }

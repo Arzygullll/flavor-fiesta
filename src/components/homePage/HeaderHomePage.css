@@ -27,7 +27,7 @@ body {
   height: 100vh;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  box-sizing: border-box; /* Учитываем отступы и границы в ширине и высоте элемента */
+  box-sizing: border-box;
 }
 
 .highlight-content {
@@ -151,66 +151,6 @@ h4 {
   z-index: -1;
 }
 
-/* Стили для футера */
-.footer {
-  height: 230px;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  background: linear-gradient(135deg, #222222, #333333);
-  color: #f0f0f0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box; /* Учитываем отступы и границы в ширине и высоте элемента */
-  position: relative;
-  overflow: hidden;
-}
-
-.footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("https://www.example.com/your-footer-background-image.jpg")
-    no-repeat center center/cover;
-  opacity: 0.2;
-  z-index: -1;
-}
-
-.footer-content h5 {
-  font-size: 1.4em;
-  font-family: "Playfair Display", serif;
-  margin-bottom: 10px;
-  transition: color 0.3s;
-}
-
-.footer-content h5:hover {
-  color: #ffcc00;
-}
-
-.footer-content p {
-  width: 1000px;
-  font-size: 1em;
-  margin: 0;
-  transition: color 0.3s;
-}
-
-.footer-content p:hover {
-  color: #ffcc00;
-}
-
-.footer-decor {
-  margin-top: 5px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
 .decor-icon {
   font-size: 2em;
   color: #ffcc00;
@@ -243,7 +183,7 @@ h4 {
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  max-width: 700px; /* Увеличиваем ширину контейнера */
+  max-width: 700px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
@@ -267,7 +207,7 @@ h4 {
 }
 
 .question {
-  font-size: 1.8em; /* Увеличиваем размер текста вопроса */
+  font-size: 1.8em;
   font-weight: bold;
   color: #333;
   margin-bottom: 20px;
@@ -344,4 +284,116 @@ h4 {
   margin-top: 30px;
   z-index: 1;
   position: relative;
+}
+
+/* Стили для футера  */
+.footer {
+  height: 250px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  background: linear-gradient(135deg, #222222, #333333);
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://www.example.com/your-footer-background-image.jpg")
+    no-repeat center center/cover;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  padding: 0 0px;
+}
+
+.footer-social,
+.footer-contacts,
+.footer-text {
+  flex: 1;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-social {
+  gap: 15px;
+}
+
+.footer-social a {
+  color: #f0f0f0;
+  font-size: 1.5em;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #ffcc00;
+}
+
+.footer-social img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+  margin-left: 50px;
+}
+
+.footer-contacts {
+  margin: 0 15px 50px 20px;
+}
+
+.footer-content h5 {
+  margin-top: 20px;
+  font-size: 1.4em;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.footer-content h5:hover {
+  color: #ffcc00;
+}
+
+.footer-content p {
+  width: 120%;
+  max-width: 800px;
+  font-size: 1em;
+  margin: 0;
+  transition: color 0.3s;
+  text-align: center;
+}
+
+.footer-content p:hover {
+  color: #ffcc00;
+}
+
+.footer-decor {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.footer-credits {
+  margin-right: 40px;
 }

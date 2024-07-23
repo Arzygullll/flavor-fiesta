@@ -129,7 +129,7 @@ const Navbar = () => {
           </Button>
           <Button
             color="inherit"
-            onClick={() => navigate("/deliciousPlaces")}
+            onClick={() => navigate("/delicious-places")}
             sx={buttonStyles}
           >
             Заведения
@@ -183,7 +183,7 @@ const Navbar = () => {
         >
           <MenuItem
             onClick={() => {
-              navigate("/addProduct");
+              navigate("/add-product");
               handleMenuClose();
             }}
           >
@@ -191,7 +191,7 @@ const Navbar = () => {
           </MenuItem>
           <MenuItem
             onClick={() => {
-              navigate("/productList");
+              navigate("/product-list");
               handleMenuClose();
             }}
           >

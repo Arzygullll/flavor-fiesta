@@ -190,13 +190,46 @@ const DeliciousPlacesPage = () => {
             </li>
           </ul>
         </div>
-
-        <footer className="footer">
-          <div className="footer-content">
-            <h5>
-              Путешествуйте по миру вкусов с нами <br /> и погружайтесь в мир
-              кулинарных чудес!
-            </h5>
+      </section>
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-social">
+            <a
+              href="https://www.instagram.com"
+              className="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_instagram-256.png"
+                alt=""
+              />
+            </a>
+            <a
+              href="https://telegram.org"
+              className="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://cdn3.iconfinder.com/data/icons/social-icons-33/512/Telegram-256.png"
+                alt=""
+              />
+            </a>
+            <a
+              href="https://www.youtube.com"
+              className="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_youtube-256.png"
+                alt=""
+              />
+            </a>
+          </div>
+          <div className="footer-text">
+            <h5>Путешествуйте по миру вкусов с нами!</h5>
             <p>
               Подписывайтесь, чтобы быть в курсе самых захватывающих рецептов и
               кулинарных тайн, которые вдохновят вас на новые гастрономические
@@ -210,12 +243,18 @@ const DeliciousPlacesPage = () => {
               <span className="decor-icon">&#9733;</span>
               <span className="decor-icon">&#9733;</span>
             </div>
-            <div className="footer-credits">
-              <p>© 2024 Flavor Fiesta. Все права защищены.</p>
-            </div>
           </div>
-        </footer>
-      </section>
+          <div className="footer-contacts">
+            <h5>Контакты</h5>
+            <p>Телефон: +996 123 456 789</p>
+            <p>Email: info@flavorfiesta.com</p>
+            <p>Адрес: ул. Московская, 123</p>
+          </div>
+        </div>
+        <div className="footer-credits">
+          <p>© 2024 Flavor Fiesta. Все права защищены.</p>
+        </div>
+      </footer>
     </div>
   );
 };
