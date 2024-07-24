@@ -14,7 +14,7 @@ const AuthContextProvider = ({ children }) => {
   // Функция регистрации
   const handleRegister = async (formData) => {
     try {
-      await axios.post(`${API}/user/register/`, formData);
+      await axios.post(`${API}/user/register/`, formData); // Отправляем POST-запрос на регистрацию
       navigate("/login");
     } catch (error) {
       console.error("Ошибка регистрации:", error);

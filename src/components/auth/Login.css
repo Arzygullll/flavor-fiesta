@@ -139,6 +139,6 @@
 /* Desktops */
 @media (min-width: 901px) {
   .register-form {
-    max-width: 350px; /* Keeps the original max-width for larger screens */
+    max-width: 350px;
   }
 }

@@ -11,8 +11,8 @@ const ResetPassword = () => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.8; // Adjust playback speed if needed
-      videoRef.current.volume = 0.3; // Adjust volume level (0 to 1)
+      videoRef.current.playbackRate = 0.8;
+      videoRef.current.volume = 0.3;
     }
   }, []);
 

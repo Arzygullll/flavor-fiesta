@@ -65,11 +65,6 @@ const Login = () => {
           <button type="button" onClick={handleSave}>
             To come in
           </button>
-          {/* {currentUser && (
-            <button className="logout-button" onClick={handleLogoutClick}>
-              Go out
-            </button>
-          )} */}
         </form>
       </div>
     </div>

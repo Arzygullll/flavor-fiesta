@@ -3,7 +3,7 @@
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  overflow: hidden; /* Обрезает содержимое, выходящее за границы карточки. */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin: 10px;
   width: 100%;

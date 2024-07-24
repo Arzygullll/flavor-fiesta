@@ -14,7 +14,7 @@ import ThumbUpAlt from "@mui/icons-material/ThumbUpAlt";
 import "./ProductCard.css";
 
 const ProductCard = ({ elem }) => {
-  const { deleteDish } = useProduct();
+  const { deleteDish } = useProduct(); // Используем контекст для удаления блюда
   const navigate = useNavigate();
   const [liked, setLiked] = useState(false);
   const [likesCount, setLikesCount] = useState(0);

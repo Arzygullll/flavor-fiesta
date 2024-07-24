@@ -19,7 +19,7 @@ const ProductContextProvider = ({ children }) => {
   const reducer = (state, action) => {
     switch (action.type) {
       case "GET_DISHES":
-        return { ...state, dishes: action.payload.results || [] }; // Ensure results are used if present
+        return { ...state, dishes: action.payload.results || [] };
       case "GET_ONE_DISH":
         return { ...state, oneDish: action.payload };
       case "GET_INGREDIENTS_LIST":

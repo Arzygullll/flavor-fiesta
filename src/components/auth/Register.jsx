@@ -26,7 +26,7 @@ const Register = () => {
     formData.append("last_name", lastName);
 
     try {
-      await handleRegister(formData);
+      await handleRegister(formData); // Пытаемся выполнить регистрацию
       navigate("/login");
     } catch (error) {
       alert("Error during registration. Please try again.");
