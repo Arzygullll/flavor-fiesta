@@ -5,7 +5,6 @@
   min-height: 103.5vh;
 }
 
-/* Медиа-запросы для адаптивного дизайна */
 @media (max-width: 1200px) {
   .cart-page {
     min-height: 100vh;
