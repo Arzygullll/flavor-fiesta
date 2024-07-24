@@ -18,19 +18,17 @@ const ResetPassword = () => {
 
   const handleResetPassword = async () => {
     if (!emailOrLogin.trim()) {
-      alert(
-        "Пожалуйста, введите ваш email или логин для восстановления пароля."
-      );
+      alert("Please enter your email or login to recover your password.");
       return;
     }
 
     try {
       await handlePasswordReset(emailOrLogin);
-      alert("Ссылка для восстановления пароля отправлена на ваш email.");
+      alert("A password recovery link has been sent to your email.");
       navigate("/login"); // Перенаправляем на страницу входа после успешного восстановления
     } catch (error) {
-      alert("Ошибка при восстановлении пароля. Пожалуйста, попробуйте снова.");
-      console.error("Ошибка восстановления пароля:", error);
+      alert("Error recovering password. Please try again.");
+      console.error("Password recovery error:", error);
     }
   };
 
@@ -42,18 +40,18 @@ const ResetPassword = () => {
       </video>
 
       <div className="reset-password-form">
-        <h1>Восстановление пароля</h1>
+        <h1>Password recovery</h1>
         <form onSubmit={(e) => e.preventDefault()}>
           <label>
-            Ваш email или логин:
+            Your email or login:
             <input
               type="text"
               value={emailOrLogin}
               onChange={(e) => setEmailOrLogin(e.target.value)}
-              placeholder="Введите ваш email или логин"
+              placeholder="Enter your email or login"
             />
           </label>
-          <button onClick={handleResetPassword}>Восстановить пароль</button>
+          <button onClick={handleResetPassword}>Restore password</button>
         </form>
       </div>
     </div>

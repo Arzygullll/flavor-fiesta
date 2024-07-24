@@ -13,7 +13,7 @@ function AboutPage() {
           color: "white",
         }}
       >
-        О нас
+        About us
       </h1>
 
       <div style={{ display: "flex", marginTop: "80px" }}>
@@ -38,12 +38,11 @@ function AboutPage() {
             color: "white",
           }}
         >
-          Вкусная Приключенческая Путешествие Кулинария – это не просто
-          приготовление пищи, это искусство, которое превращает простые
-          ингредиенты в незабываемые блюда. Каждый рецепт – это как карта,
-          ведущая нас в мир вкусов и ароматов, где мы можем стать настоящими
-          кулинарными художниками. Зачем просто готовить, если можно создавать
-          шедевры, которые будут радовать глаза и вкусовые рецепторы?
+          Delicious Adventure Travel Cooking is not easy cooking is an art that
+          transforms simple ingredients into unforgettable dishes. Every recipe
+          is like a map, leading us into the world of tastes and aromas, where
+          we can become real culinary artists. Why just cook when you can
+          create? masterpieces that will delight the eyes and taste buds?
         </h4>
       </div>
       <div style={{ display: "flex", marginTop: "80px" }}>
@@ -57,12 +56,12 @@ function AboutPage() {
             color: "white",
           }}
         >
-          Кулинарное Творчество На кухне у вас есть возможность проявить свою
-          креативность. Каждый раз, когда вы готовите, вы создаете что-то
-          уникальное. Кулинария – это не только о вкусной еде, но и о том, чтобы
-          сделать процесс приготовления увлекательным и вдохновляющим. Так что
-          не бойтесь делать ошибки и пробовать что-то новое – это часть
-          увлекательного путешествия в мир кулинарии.
+          Culinary Creativity In the kitchen you have the opportunity to express
+          your creativity. Every time you cook you create something unique.
+          Cooking is not only about delicious food, but also about make the
+          cooking process fun and inspiring. So don't be afraid to make mistakes
+          and try something new - that's part of a fascinating journey into the
+          world of cooking.
         </h4>
         <img
           className="fade-in slide-from-right"
@@ -99,12 +98,12 @@ function AboutPage() {
             fontFamily: "cursive",
           }}
         >
-          Кулинарные Традиции и Инновации История кухни – это история
-          человечества. С древних времен до современности, методы и ингредиенты
-          изменялись, но страсть к еде осталась неизменной. Сегодня современные
-          технологии и инновации в кулинарии помогают нам готовить быстрее и
-          удобнее, но это не отменяет важности сохранения традиций и уважения к
-          кулинарному наследию.
+          Culinary Traditions and Innovations The history of cuisine is history
+          humanity. From ancient times to modern times, methods and ingredients
+          have changed, but the passion for food has remained unchanged. Today
+          modern technology and innovation in cooking help us cook faster and
+          more convenient, but this does not negate the importance of preserving
+          traditions and respect for culinary heritage.
         </h4>
       </div>
       <footer className="footer">
@@ -145,12 +144,12 @@ function AboutPage() {
             </a>
           </div>
           <div className="footer-text">
-            <h5>Путешествуйте по миру вкусов с нами!</h5>
+            <h5>Travel the world of tastes with us!</h5>
             <p>
-              Подписывайтесь, чтобы быть в курсе самых захватывающих рецептов и
-              кулинарных тайн, которые вдохновят вас на новые гастрономические
-              приключения. Оставайтесь с нами и откройте для себя секреты,
-              которые превратят каждое блюдо в произведение искусства!
+              Subscribe to stay up to date with the most exciting recipes and
+              culinary secrets that will inspire you to new gastronomic
+              adventures. Stay with us and discover the secrets, which will turn
+              every dish into a work of art!
             </p>
             <div className="footer-decor">
               <span className="decor-icon">&#9733;</span>
@@ -161,14 +160,14 @@ function AboutPage() {
             </div>
           </div>
           <div className="footer-contacts">
-            <h5>Контакты</h5>
-            <p>Телефон: +996 123 456 789</p>
+            <h5>Contacts</h5>
+            <p>Phone: +996 123 456 789</p>
             <p>Email: info@flavorfiesta.com</p>
-            <p>Адрес: ул. Московская, 123</p>
+            <p>Address: st. Moscow, 123</p>
           </div>
         </div>
         <div className="footer-credits">
-          <p>© 2024 Flavor Fiesta. Все права защищены.</p>
+          <p>© 2024 Flavor Fiesta. All rights reserved.</p>
         </div>
       </footer>
     </div>

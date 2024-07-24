@@ -77,7 +77,7 @@ const ProductList = () => {
 
   return (
     <div className="product-list-container">
-      <h1>Список блюд</h1>
+      <h1>List of dishes</h1>
       {renderProductCards()}
       <Pagination>
         <Pagination.Prev onClick={() => handlePageClick(currentPage - 1)} />
@@ -122,12 +122,12 @@ const ProductList = () => {
             </a>
           </div>
           <div className="footer-text">
-            <h5>Путешествуйте по миру вкусов с нами!</h5>
+            <h5>Travel the world of tastes with us!</h5>
             <p>
-              Подписывайтесь, чтобы быть в курсе самых захватывающих рецептов и
-              кулинарных тайн, которые вдохновят вас на новые гастрономические
-              приключения. Оставайтесь с нами и откройте для себя секреты,
-              которые превратят каждое блюдо в произведение искусства!
+              Subscribe to stay up to date with the most exciting recipes and
+              culinary secrets that will inspire you to new gastronomic
+              adventures. Stay with us and discover the secrets, which will turn
+              every dish into a work of art!
             </p>
             <div className="footer-decor">
               <span className="decor-icon">&#9733;</span>
@@ -138,14 +138,14 @@ const ProductList = () => {
             </div>
           </div>
           <div className="footer-contacts">
-            <h5>Контакты</h5>
-            <p>Телефон: +996 123 456 789</p>
+            <h5>Contacts</h5>
+            <p>Phone: +996 123 456 789</p>
             <p>Email: info@flavorfiesta.com</p>
-            <p>Адрес: ул. Московская, 123</p>
+            <p>Address: st. Moscow, 123</p>
           </div>
         </div>
         <div className="footer-credits">
-          <p>© 2024 Flavor Fiesta. Все права защищены.</p>
+          <p>© 2024 Flavor Fiesta. All rights reserved.</p>
         </div>
       </footer>
     </div>

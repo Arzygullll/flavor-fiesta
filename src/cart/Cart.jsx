@@ -30,20 +30,32 @@ const Cart = () => {
         maxWidth: 800,
         margin: "auto",
         padding: "20px",
-        marginTop: "50px",
+        marginTop: "120px",
       }}
     >
       <TableContainer component={Paper}>
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Фото</TableCell>
-              <TableCell>Название</TableCell>
-              <TableCell>Категория</TableCell>
-              <TableCell>Цена</TableCell>
-              <TableCell>Количество</TableCell>
-              <TableCell>Сумма</TableCell>
-              <TableCell>Удалить</TableCell>
+              <TableCell style={{ backgroundColor: "#eadeda" }}>
+                Photo
+              </TableCell>
+              <TableCell style={{ backgroundColor: "#eadeda" }}>
+                Title
+              </TableCell>
+              <TableCell style={{ backgroundColor: "#eadeda" }}>
+                Category
+              </TableCell>
+              <TableCell style={{ backgroundColor: "#eadeda" }}>
+                Price
+              </TableCell>
+              <TableCell style={{ backgroundColor: "#eadeda" }}>
+                Quantity
+              </TableCell>
+              <TableCell style={{ backgroundColor: "#eadeda" }}>Sum</TableCell>
+              <TableCell style={{ backgroundColor: "#eadeda" }}>
+                Delete
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -82,11 +94,11 @@ const Cart = () => {
                 <TableCell>
                   <Button
                     onClick={() => deleteProductFromCart(elem.item.id)}
-                    variant="outlined"
+                    variant="contained"
                     color="error"
                     style={{ textTransform: "none" }}
                   >
-                    Удалить
+                    Delete
                   </Button>
                 </TableCell>
               </TableRow>
@@ -98,9 +110,13 @@ const Cart = () => {
         variant="contained"
         color="primary"
         size="large"
-        style={{ marginTop: "20px" }}
+        style={{
+          marginTop: "20px",
+          backgroundColor: "rgba(255, 255, 255, 0.8)",
+          color: "#043565",
+        }}
       >
-        Купить сейчас за {cart.totalPrice} $
+        Buy now for {cart.totalPrice} $
       </Button>
     </div>
   );

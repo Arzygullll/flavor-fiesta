@@ -104,14 +104,14 @@ const Navbar = () => {
           }}
         >
           <Button color="inherit" onClick={handleMenuOpen2} sx={buttonStyles}>
-            Рецепты
+            recipes
           </Button>
           <Button
             color="inherit"
             onClick={() => navigate("/books")}
             sx={buttonStyles}
           >
-            Книги
+            books
           </Button>
           <Button
             variant="h6"
@@ -132,14 +132,14 @@ const Navbar = () => {
             onClick={() => navigate("/delicious-places")}
             sx={buttonStyles}
           >
-            Заведения
+            delicious places
           </Button>
           <Button
             color="inherit"
             onClick={() => navigate("/about")}
             sx={buttonStyles}
           >
-            О нас
+            about us
           </Button>
         </Container>
 
@@ -154,7 +154,7 @@ const Navbar = () => {
               handleMenuClose();
             }}
           >
-            Регистрация
+            register
           </MenuItem>
           <MenuItem
             onClick={() => {
@@ -162,7 +162,7 @@ const Navbar = () => {
               handleMenuClose();
             }}
           >
-            Войти
+            login
           </MenuItem>
           <Link to={"/cart"}>
             <Badge badgeContent={badgeCount} color="success">
@@ -183,19 +183,19 @@ const Navbar = () => {
         >
           <MenuItem
             onClick={() => {
-              navigate("/add-product");
+              navigate("/addProduct");
               handleMenuClose();
             }}
           >
-            Добавить новое блюдо
+            Add new dish
           </MenuItem>
           <MenuItem
             onClick={() => {
-              navigate("/product-list");
+              navigate("/productList");
               handleMenuClose();
             }}
           >
-            Рецепты
+            Recipes
           </MenuItem>
         </Menu>
         <Box sx={{ ml: "auto", display: "flex", alignItems: "center" }}>

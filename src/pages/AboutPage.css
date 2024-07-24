@@ -178,6 +178,47 @@ h4 {
     padding: 5px;
   }
 }
+
+/* Адаптивные стили для min-width 320px */
+@media (min-width: 320px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 12px;
+  }
+
+  .about-page {
+    padding: 2px;
+  }
+
+  .footer {
+    padding: 10px;
+  }
+
+  .footer-social img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer-contacts {
+    margin: 0 10px 20px 10px;
+  }
+
+  .footer-content h5 {
+    font-size: 1.2em;
+  }
+
+  .footer-content p {
+    font-size: 0.8em;
+  }
+}
+
 /* Стили для футера  */
 .footer {
   height: 250px;
@@ -286,6 +327,7 @@ h4 {
   justify-content: center;
   gap: 10px;
 }
+
 .footer-credits {
   margin-right: 40px;
 }

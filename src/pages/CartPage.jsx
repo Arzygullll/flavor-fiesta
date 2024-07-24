@@ -5,8 +5,9 @@ import { Container, Grid } from "@mui/material";
 const CartPage = () => {
   return (
     <div
+      className="cart-page"
       style={{
-        backgroundImage: `url(${require("../components/homePage/assets/makaruny-pechene-rozovye-zelenye-podnos-tkan-temnyi-fon.jpg")})`,
+        backgroundImage: `url(${require("../components/homePage/assets/e785546b7f725acbcd6f730779780f29.jpg")})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         minHeight: "103.5vh",

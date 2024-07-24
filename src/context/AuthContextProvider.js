@@ -34,23 +34,6 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
-  // Функция проверки аутентификации
-  // const checkAuth = async () => {
-  //   try {
-  //     const tokens = JSON.parse(localStorage.getItem("tokens"));
-  //     const { data } = await axios.post(`${API}/user/refresh/`, {
-  //       refresh: tokens.refresh,
-  //     });
-  //     localStorage.setItem(
-  //       "tokens",
-  //       JSON.stringify({ access: data.access, refresh: tokens.refresh })
-  //     );
-  //     const email = JSON.parse(localStorage.getItem("email"));
-  //     setCurrentUser(email);
-  //   } catch (error) {
-  //     console.error("Ошибка проверки аутентификации:", error);
-  //   }
-  // };
   const checkAuth = async () => {
     try {
       const tokens = JSON.parse(localStorage.getItem("tokens"));

@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleSave = async () => {
     if (!email.trim() || !password.trim()) {
-      alert("Заполните поля!");
+      alert("Fill in the fields!");
       return;
     }
 
@@ -63,13 +63,13 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <button type="button" onClick={handleSave}>
-            Войти
+            To come in
           </button>
-          {currentUser && (
+          {/* {currentUser && (
             <button className="logout-button" onClick={handleLogoutClick}>
-              Выйти
+              Go out
             </button>
-          )}
+          )} */}
         </form>
       </div>
     </div>

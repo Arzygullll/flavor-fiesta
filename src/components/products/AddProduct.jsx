@@ -66,7 +66,7 @@ const AddProduct = () => {
       selectedIngredients.some((ingredient) => ingredient === "") ||
       quantities.some((quantity) => !quantity)
     ) {
-      setMessage("Пожалуйста, заполните все поля.");
+      setMessage("Please fill out all fields.");
       return;
     }
 
@@ -92,7 +92,7 @@ const AddProduct = () => {
       if (dishModel && photo) {
         await uploadDishImage(dishModel.id, photo);
       }
-      setMessage("Блюдо успешно добавлено!");
+      setMessage("The dish has been added successfully!");
       setName("");
       setCuisine("");
       setType("");
@@ -105,18 +105,18 @@ const AddProduct = () => {
       setSelectedIngredients([]);
       setQuantities([]);
     } catch (error) {
-      setMessage("Ошибка при добавлении блюда. Попробуйте снова.");
+      setMessage("Error adding dish. Try again.");
       console.error("Error adding dish:", error);
     }
   };
 
   return (
     <div className="add-product-container">
-      <h2>Добавление блюда</h2>
+      <h2>Adding a dish</h2>
       {message && <p>{message}</p>}
       <form onSubmit={handleSubmit} encType="multipart/form-data">
         <div>
-          <label>Название блюда:</label>
+          <label>Dish name:</label>
           <input
             type="text"
             value={name}
@@ -125,40 +125,40 @@ const AddProduct = () => {
           />
         </div>
         <div>
-          <label>Кухня:</label>
+          <label>Cuisine</label>
           <select
             value={cuisine}
             onChange={(e) => setCuisine(e.target.value)}
             className="select-field"
           >
-            <option value="">Выберите кухню</option>
-            <option value="Asian">Азиатская</option>
-            <option value="Europian">Европейская</option>
-            <option value="Kyrgyz">Киргизская</option>
-            <option value="Russian">Русская</option>
-            <option value="Japanese">Японская</option>
-            <option value="Chinese">Китайская</option>
+            <option value="">Choose a kitchen</option>
+            <option value="Asian">Asian</option>
+            <option value="Europian">Europian</option>
+            <option value="Kyrgyz">Kyrgyz</option>
+            <option value="Russian">Russian</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Chinese">Chinese</option>
           </select>
         </div>
         <div>
-          <label>Тип блюда:</label>
+          <label>Type of dish:</label>
           <select
             value={type}
             onChange={(e) => setType(e.target.value)}
             className="select-field"
           >
-            <option value="">Выберите тип блюда</option>
-            <option value="Snack">Закуска</option>
-            <option value="First course">Первое блюдо</option>
-            <option value="Hot dish">Горячее блюдо</option>
-            <option value="Dessert">Десерт</option>
-            <option value="Cocktail">Коктейль</option>
-            <option value="Soup">Суп</option>
-            <option value="Salad">Салат</option>
+            <option value="">Select dish type</option>
+            <option value="Snack">Snack</option>
+            <option value="First course">First course</option>
+            <option value="Hot dish">Hot dish</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Cocktail">Cocktail</option>
+            <option value="Soup">Soup</option>
+            <option value="Salad">Salad</option>
           </select>
         </div>
         <div>
-          <label>Время приготовления:</label>
+          <label>Cooking time:</label>
           <input
             type="number"
             value={cookingTime}
@@ -167,7 +167,7 @@ const AddProduct = () => {
           />
         </div>
         <div>
-          <label>Рецепт:</label>
+          <label>Recipe:</label>
           <textarea
             value={recipe}
             onChange={(e) => setRecipe(e.target.value)}
@@ -175,20 +175,20 @@ const AddProduct = () => {
           />
         </div>
         <div>
-          <label>Уровень сложности:</label>
+          <label>Difficulty level:</label>
           <select
             value={level}
             onChange={(e) => setLevel(e.target.value)}
             className="select-field"
           >
-            <option value="">Выберите уровень сложности</option>
-            <option value="Easy">Легкий</option>
-            <option value="Medium">Средний</option>
-            <option value="Hard">Сложный</option>
+            <option value="">Select difficulty level</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
           </select>
         </div>
         <div>
-          <label>Количество человек:</label>
+          <label>Number of persons:</label>
           <input
             type="number"
             value={quantPeople}
@@ -197,7 +197,7 @@ const AddProduct = () => {
           />
         </div>
         <div>
-          <label>Описание:</label>
+          <label>Description:</label>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -205,7 +205,7 @@ const AddProduct = () => {
           />
         </div>
         <div>
-          <label>Фото:</label>
+          <label>Photo:</label>
           <input
             type="file"
             onChange={(e) => setPhoto(e.target.files[0])}
@@ -214,7 +214,7 @@ const AddProduct = () => {
         </div>
 
         <div>
-          <h3>Ингредиенты:</h3>
+          <h3>Ingredients:</h3>
           {selectedIngredients.map((ingredient, index) => (
             <div key={index} className="ingredient-row">
               <select
@@ -231,7 +231,7 @@ const AddProduct = () => {
                 }}
                 className="select-field"
               >
-                <option value="">Выберите ингредиент</option>
+                <option value="">Select ingredient</option>
                 {ingredients.map((ing) => (
                   <option key={ing.id} value={ing.id}>
                     {ing.name}
@@ -242,19 +242,19 @@ const AddProduct = () => {
                 type="number"
                 value={quantities[index] || ""}
                 onChange={(e) => handleQuantityChange(index, e.target.value)}
-                placeholder="Количество"
+                placeholder="Quantity"
               />
               <button type="button" onClick={() => removeIngredient(index)}>
-                Удалить
+                Delete
               </button>
             </div>
           ))}
           <button type="button" onClick={addIngredient}>
-            Добавить ингредиент
+            Add ingredient
           </button>
         </div>
 
-        <button type="submit">Добавить блюдо</button>
+        <button type="submit">Add a dish</button>
       </form>
     </div>
   );

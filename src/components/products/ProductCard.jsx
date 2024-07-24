@@ -86,24 +86,24 @@ const ProductCard = ({ elem }) => {
           color="text.secondary"
           className="dish-description"
         >
-          Описание: {elem.description}
+          Description: {elem.description}
         </Typography>
         <Typography
           variant="body2"
           color="text.secondary"
           className="dish-description"
         >
-          Кухня: {elem.cuisine} <br />
-          Тип: {elem.type} <br />
-          Время готовки: {elem.cooking_time} мин <br />
-          Уровень: {elem.level} <br />
-          Владелец: {elem.owner} <br />
-          Ингредиенты:{" "}
+          Cuisine: {elem.cuisine} <br />
+          Type: {elem.type} <br />
+          Cooking time: {elem.cooking_time} мин <br />
+          Level: {elem.level} <br />
+          Owner: {elem.owner} <br />
+          Ingredients:{" "}
           {elem.ingredients &&
             elem.ingredients.length > 0 &&
             elem.ingredients[0].name}{" "}
           <br />
-          Рецепт: {elem.recipe}
+          Recipe: {elem.recipe}
         </Typography>
         <Stack
           direction="row"
@@ -122,7 +122,7 @@ const ProductCard = ({ elem }) => {
             )}
           </IconButton>
           <Typography variant="body2" color="text.secondary">
-            {likesCount} {likesCount === 1 ? "лайк" : "лайков"}
+            {likesCount} {likesCount === 1 ? "like" : "likes"}
           </Typography>
           <Button
             variant="contained"
@@ -130,7 +130,7 @@ const ProductCard = ({ elem }) => {
             className="delete-button"
             onClick={() => deleteDish(id)}
           >
-            Удалить
+            Delete
           </Button>
           <Button
             variant="contained"
@@ -138,7 +138,7 @@ const ProductCard = ({ elem }) => {
             className="edit-button"
             onClick={handleEdit}
           >
-            Редактировать
+            Edit
           </Button>
         </Stack>
         <Rating
@@ -148,14 +148,14 @@ const ProductCard = ({ elem }) => {
         />
         <form onSubmit={handleCommentSubmit} className="comments-section">
           <TextField
-            label="Добавьте комментарий"
+            label="Add a comment"
             variant="outlined"
             fullWidth
             value={comment}
             onChange={(e) => setComment(e.target.value)}
           />
           <Button type="submit" variant="contained" color="primary">
-            Добавить
+            Add
           </Button>
           <div className="comments-list">
             {comments.map((c) => (
@@ -166,7 +166,7 @@ const ProductCard = ({ elem }) => {
                   color="error"
                   onClick={() => handleDeleteComment(c.id)}
                 >
-                  Удалить
+                  Delete
                 </Button>
               </div>
             ))}

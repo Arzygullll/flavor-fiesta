@@ -20,97 +20,99 @@ import "./BooksPage.css";
 const booksData = [
   {
     id: 1,
-    title: "«Три метлы», «Кабанья голова» и другие угощения из Хогвартса",
-    author: "Леманн Жасмин",
+    title:
+      "«The Three Broomsticks», «The Hog's Head» and Other Treats from Hogwarts",
+    author: "Jasmin Lehmann",
     description:
-      "Рецепты выпечки Гарри Поттера. 24 сладких сюрприза из волшебного мира",
+      "Harry Potter Baking Recipes. 24 Sweet Surprises from the Magical World",
     image:
       "https://img4.labirint.ru/rc/eba1532bdfdce211a9056ffea0f526bb/363x561q80/books90/894050/cover.jpg?1674888773",
     price: "600",
   },
   {
     id: 2,
-    title: "Лезетли тат. Рецепты из турецких сериалов",
-    author: "Саглам Дахие",
+    title: "Tasty Tales: Recipes from Turkish TV series",
+    author: "Saglam Dahiye",
     description:
-      "За что вы любите турецкие сериалы? За их перчинку и способность заставить забыть обо всем на свете в ожидании новой серии! А знаете, что еще доставляет яркие эмоции? Вкусная еда! И ее в турецких сериалах много. Интересно, каковы на вкус любимые блюда Хюррем, Серкана или Аслы?",
+      "What do you love about Turkish TV series? Their spice and ability to make you forget everything in anticipation of the next episode! But do you know what else brings vivid emotions? Delicious food! And there’s plenty of it in Turkish TV series. Curious about what Hürrem, Serkan, or Aslı’s favorite dishes taste like?",
     image:
       "https://img3.labirint.ru/rc/7edffe9fefa5f1df6fa91e5b77895e96/363x561q80/books102/1010423/cover.jpg?1712085983",
     price: "1200",
   },
   {
     id: 3,
-    title: "Моти. Легендарный воздушный десерт из Японии",
+    title: "Moti. The legendary air dessert from Japan",
     author: "",
     description:
-      "Приготовить трендовый японский десерт моти? Проще простого с книгой «Моти. Легендарный воздушный десерт из Японии»",
+      "Make a trendy Japanese dessert mochi? It's easier than ever with the book 'Moti. The legendary air dessert from Japan'",
     image: "https://cdn.eksmo.ru/v2/ITD000000001343508/COVER/cover1__w820.jpg",
     price: "920",
   },
   {
     id: 4,
-    title:
-      "Бенто-торты. Бисквитные, муссовые и классические торты в мини-формате",
-    author: "Светлана Мещерякова",
+    title: "Bento cakes. Sponge, mousse and classic cakes in mini format",
+    author: "Svetlana Meshcheryakova",
     description:
-      "Бенто-торты — кондитерский тренд, который не сдает позиции уже не первый год. И это неудивительно: эффектные тортики размером с ладонь в коробочках — трогательный презент на день рождения, способ порадовать близкого или побаловать себя без повода. Бенто-торты бывают любыми: бисквитными, муссовыми и даже классическими, только в уменьшенном формате.",
+      "Bento cakes are a confectionery trend that has not been losing ground for several years. And this is not surprising: spectacular palm—sized cakes in boxes are a touching birthday present, a way to please a loved one or pamper yourself for no reason. Bento cakes can be of any kind: sponge cakes, mousse cakes and even classic ones, only in a reduced format.",
     image: "https://cdn.eksmo.ru/v2/ITD000000001322164/COVER/cover1__w600.jpg",
     price: "1267",
   },
   {
     id: 5,
-    title: "Домашняя выпечка. Рецепты, согревающие душу",
-    author: "Диёра Усманова",
+    title: "Homemade cakes. Recipes that warm the soul",
+    author: "Diera Usmanova",
     description:
-      "Представьте себе — теплые домашние вечера, запах свежеиспеченных пирожных и добрые улыбки, озаряющие лица ваших близких. Все это и гораздо больше ждет вас в этой кулинарной книге, наполненной самыми сокровенными рецептами сладких блюд и вкуснейших десертов. Эта книга — не просто сборник рецептов, она — настоящая сокровищница семейных ценностей, передаваемых из поколения в поколение. Здесь, между страницами, прячутся воспоминания автора о бабушке, маме и тех мгновениях, когда вся семья собиралась на кухне, чтобы вместе готовить и наслаждаться вкусом созданных творений.",
+      "Imagine warm home evenings, the smell of freshly baked cakes and kind smiles illuminating the faces of your loved ones. All this and much more awaits you in this cookbook filled with the most intimate recipes for sweet dishes and delicious desserts. This book is not just a collection of recipes, it is a real treasure trove of family values passed down from generation to generation. Here, between the pages, the author's memories of his grandmother, mother and those moments when the whole family gathered in the kitchen to cook together and enjoy the taste of created creations are hidden.",
     image: "https://cv3.litres.ru/pub/c/cover/70480633.jpg",
     price: "1600",
   },
   {
     id: 6,
     title:
-      "Рецепты из таверны для Гарри Поттера. Угощения из Хогсмида, «Дырявого котла» и других волшебных мест",
-    author: "Том Гримм",
+      "Recipes from the tavern for Harry Potter. Treats from Hogsmeade, The Leaky Cauldron and other magical places",
+    author: "Tom Grimm",
     description:
-      "Мир Гарри Поттера полон еды! Наверняка каждый из нас, впервые очутившись вместе с Гарри в мире волшебников, смотрел широко раскрытыми глазами на чудесные яства, подаваемые тут и там. Удивительные сладости в Хогвартс-экспрессе, головокружительные пиры в Хогвартсе, разнообразные блюда и коварные напитки в «Дырявом котле», «Кабаньей голове» и «Трех метлах»... Теперь все это под силу попробовать и нам, простым маглам!",
-    image: "https://cdn.eksmo.ru/v2/ITD000000001350395/COVER/cover1__w600.jpg",
+      "Harry Potter's world is full of food! Surely each of us, when we first found ourselves with Harry in the world of wizards, looked with wide eyes at the wonderful dishes served here and there. Amazing sweets on the Hogwarts Express, dizzying feasts at Hogwarts, a variety of dishes and insidious drinks at the Leaky Cauldron, Boar's Head and Three Brooms... Now we, simple Muggles, can try all this!",
+    image: "https://cdn.eksmo.ru/v2/ITD000000001350395/COVER/cover1__w600.jpg ",
     price: "1900",
   },
   {
     id: 7,
     title:
-      "Вкусный пост. Более 60 рецептов, которые вы будете готовить даже после поста",
-    author: "Ольга Войнова",
+      "A delicious post. More than 60 recipes that you will cook even after fasting",
+    author: "Olga Voynova",
     description:
-      "Какой должна быть постная пища? Вкусной и сытной, а еще разнообразной. Этих правил уже давно придерживается Ольга Войнова, автор бестселлера «Ремесленный хлеб и сдоба на закваске». В новой книге она с открытой душой делится не только рецептами вкусных постных блюд, но и раскрывает секреты, как сделать каждое из них еще разнообразнее. Поэтому идей хватит надолго!",
-    image: "https://s1-goods.ozstatic.by/1000/470/306/101/101306470_0.jpg",
+      "What should a lean meal be like? Delicious and satisfying, and also varied. These rules have long been adhered to by Olga Voynova, author of the bestseller 'Artisan bread and Sourdough muffin'. In the new book, she shares with an open mind not only recipes for delicious lean dishes, but also reveals the secrets of how to make each of them even more diverse. Therefore, there will be enough ideas for a long time!",
+    image: "https://s1-goods.ozstatic.by/1000/470/306/101/101306470_0.jpg ",
     price: "1235",
   },
   {
     id: 9,
-    title: "Вкус утра. Красивые завтраки для будней и неспешных выходных",
-    author: "Маша Шелушенко",
+    title:
+      "The taste of morning. Beautiful breakfasts for weekdays and leisurely weekends",
+    author: "Masha Shelushenko",
     description:
-      "Маша Шелушенко — повар, шеф-кондитер, популярный фуд-блогер и автор книг «Жить вкусно. Готовить дома, как в ресторане» и «Торт-конструктор. 50 вариантов собрать свой торт». В своих книгах Маша помогает читателям научиться готовить вкусные и по-ресторанному красивые блюда прямо на домашней кухне.",
-    image: "https://cdn.eksmo.ru/v2/ITD000000000873446/COVER/cover1__w820.webp",
+      'Masha Shelushenko is a cook, pastry chef, popular food blogger and author of the books Living is delicious. Cooking at home, like in a restaurant" and "Cake designer. 50 ways to assemble your cake." In her books, Masha helps readers learn how to cook delicious and restaurant-style beautiful dishes right in their home kitchen.',
+    image:
+      "https://cdn.eksmo.ru/v2/ITD000000000873446/COVER/cover1__w820.webp ",
     price: "700",
   },
   {
     id: 10,
-    title: "Энциклопедия французской выпечки",
-    author: "Гастон Ленотре",
+    title: "Encyclopedia of French pastries",
+    author: "Gaston Lenotre",
     description:
-      "Известный во всем мире «Дом Ленотр»! Созданный в течение 25 лет всей семьей Гастона и Колетт Ленотр! Результат их труда запечатлен в этой потрясающей книге! Захватывающая история начала и развития этого кондитерского дома. Подробное описание времени каждого этапа приготовления, оборудования, выхода/результата, шагов приготовления не легких (французских!) десертов. Важно — актуальные заметки шеф-повара для каждого блюда. И 200 самых впечатляющих десертов, помимо теста и его вариаций, сопровождающих любой десерт кремов, муссов и глазурей: разнообразные виды бриошей, круассанов, кексов, тартов, пирожных и, наконец, известные во всем мире торты!",
-    image: "https://ir.ozone.ru/s3/multimedia-7/wc1000/6896111479.jpg",
+      'The world-famous "House of Lenotr"! Created for 25 years by the whole family of Gaston and Colette Lenotre! The result of their work is captured in this amazing book! An exciting story of the beginning and development of this confectionery house. A detailed description of the time of each cooking stage, equipment, output/result, cooking steps are not easy (French!) desserts. Important — the chef"s up-to-date notes for each dish. And 200 of the most impressive desserts, in addition to the dough and its variations, accompanying any dessert of creams, mousses and glazes: various types of brioches, croissants, muffins, tarts, cakes and, finally, world-famous cakes!',
+    image: "https://ir.ozone.ru/s3/multimedia-7/wc1000/6896111479.jpg ",
     price: "756",
   },
   {
     id: 11,
     title:
-      "Кулинарная география. 90 лучших семейных ужинов со всех концов света",
-    author: "Ирина Чадеева",
+      "Culinary geography. The 90 best family dinners from all over the world",
+    author: "Irina Chadeeva",
     description:
-      "При упоминании слова «география» многие вспоминают скучные уроки про полезные ископаемые, зубрежку разных видов ветров и заполнение контурной карты. Ирина Чадеева решила придать этому слову новое значение! Благодаря книге «Кулинарная география» вы проедетесь по блюдам всего мира: начиная от австралийского мясного пирога и заканчивая канадскими блинчиками с кленовым сиропом",
+      'At the mention of the word "geography", many people remember boring lessons about minerals, cramming different types of winds and filling out a contour map. Irina Chadeeva decided to give this word a new meaning! Thanks to the book "Culinary Geography" you will travel through the dishes of the whole world: starting from the Australian meat pie and ending with Canadian pancakes with maple syrup',
     image:
       "https://img3.labirint.ru/rc/fd1ad76f02a9c43107a311a46489bd6b/363x561q80/books101/1004187/cover.jpg?1707200747",
     price: "860",
@@ -118,10 +120,10 @@ const booksData = [
   {
     id: 12,
     title:
-      "Я выбираю рыбу! Полный гид по выбору и приготовлению от рыбопромышленника в третьем поколении",
-    author: "Светлана Кроткова",
+      "I choose the fish! A complete guide to choosing and cooking from a third-generation fisherman",
+    author: "Svetlana Krotkova",
     description:
-      "Светлана Кроткова — автор блога о рыбе с аудиторией более 300 000 подписчиков, рыбопромышленник в третьем поколении и просто неравнодушный человек, влюбленный в рыбу и её приготовление. Книга Светланы — это путеводитель по миру рыбы: от привычных скумбрии и трески до экзотических тайменя и тунца. Светлана делится личным опытом и даёт практические советы по выбору, хранению, разделке и приготовлению рыбы. В книге есть рецепты блюд на любой вкус и повод: для быстрого ужина в будни, для праздничного стола, для готовки на природе и, конечно, для особых случаев.",
+      "Svetlana Krotkova is the author of a blog about fish with an audience of more than 300,000 subscribers, a third—generation fisherman and just a caring person who is in love with fish and its cooking. Svetlana's book is a guide to the world of fish: from the usual mackerel and cod to exotic taimen and tuna. Svetlana shares her personal experience and gives practical advice on the selection, storage, cutting and cooking of fish. The book has recipes for dishes for every taste and occasion: for a quick dinner on weekdays, for a festive table, for cooking in nature and, of course, for special occasions.",
     image:
       "https://main-cdn.sbermegamarket.ru/big1/hlr-system/-27/368/671/931/121/5/600016100244b0.jpg",
     price: "900",
@@ -129,28 +131,29 @@ const booksData = [
   {
     id: 13,
     title:
-      "Идеальный кондитер. Пошаговый гид от простых конфет до изумительных тортов",
-    author: "Екатерина Митюшкина",
+      "The perfect pastry chef. A step-by-step guide from simple candies to amazing cakes",
+    author: "Ekaterina Mityushkina",
     description:
-      "Как стать идеальным кондитером, чтобы двухъярусные торты не падали, крем поражал своей бархатной текстурой, а дизайн всегда получался удачным? Ответ на эти вопросы дала кондитер с восьмилетним опытом и популярный блогер Екатерина Митюшкина — автор книги «Идеальный кондитер»!",
+      "How do you become the perfect pastry chef so that the two-tiered cakes do not fall, the cream impresses with its velvety texture, and the design always turns out to be successful? The answer to these questions was given by a pastry chef with eight years of experience and a popular blogger Ekaterina Mityushkina, the author of the book 'The Perfect Pastry Chef'!",
     image: "https://cdn.eksmo.ru/v2/ITD000000001275542/COVER/cover1__w600.jpg",
     price: "1600",
   },
   {
     id: 14,
-    title: "Не просто завтрак",
-    author: "Юлия Дианова",
+    title: "Not just breakfast",
+    author: "Julia Dianova",
     description:
-      "«Здравствуй, любимый завтрак!» — именно такими словами автор книги Юлия Дианова советует начинать свой день. В дебютной книге профессионального кондитера, популярного блогера, заботливой мамы пятерых детей и просто энергичной и очаровательной женщины вы сможете найти все для того, чтобы сделать утро ярким и вкусным! Автор уверен, что когда ждешь завтрака, как встречи с любимым, вырабатывается гормон радости, и вы ни за что на свете не наберете ни грамма! Поэтому на завтрак можно все! Драники с рийетом из лосося, рисовая каша с халвой, шакшука или колоритный турецкий завтрак? Круассан с печеным перцем, соусом песто и моцареллой или дрожжевые оладьи с яблоками? Выбирайте, готовьте, радуйте себя и близких! Пусть ваше утро будет вкусным!",
-    image: "https://cdn.eksmo.ru/v2/ITD000000001312063/COVER/cover1__w820.webp",
+      "Hello, my favorite breakfast! — these are the words the author of the book Yulia Dianova advises to start your day. In the debut book of a professional pastry chef, a popular blogger, a caring mother of five children and just an energetic and charming woman, you can find everything to make the morning bright and delicious! The author is sure that when you wait for breakfast, as a meeting with a loved one, the hormone of joy is produced, and you will not gain a single gram for anything in the world! Therefore, you can have everything for breakfast! Pancakes with salmon salad, rice porridge with halva, shakshuka or a colorful Turkish breakfast? Croissant with baked peppers, pesto sauce and mozzarella or yeast pancakes with apples? Choose, cook, please yourself and your loved ones! May your morning be delicious!",
+    image:
+      "https://cdn.eksmo.ru/v2/ITD000000001312063/COVER/cover1__w820.webp ",
     price: "2300",
   },
   {
     id: 15,
-    title: "Чизкейк внутри. Сложные и необычные торты - легко!",
-    author: "Виктория Мельник",
+    title: "Cheesecake inside. Complex and unusual cakes are easy!",
+    author: "Victoria Melnik",
     description:
-      "Создайте свою персональную сладкую историю под руководством популярного блогера Виктории Мельник ( @vicky_bakery, более 100 тыс подписчиков в Инстаграм).",
+      "Create your own personal sweet story under the guidance of popular blogger Victoria Melnik (@vicky_bakery, more than 100 thousand Instagram followers).",
     image:
       "https://img2.labirint.ru/rcimg/87a52f954fcd337a3883e42abb54d7ef/960x540/books62/615728/ph_001.jpg?1686677380",
     price: "1900",
@@ -158,137 +161,145 @@ const booksData = [
   {
     id: 16,
     title:
-      " Щепотка вкусных воспоминаний. Простые и понятные рецепты для ностальгических встреч",
-    author: "Евгения Решанова",
+      " A pinch of delicious memories. Simple and clear recipes for nostalgic meetings",
+    author: "Evgenia Reshanova",
     description:
-      "Для уютных встреч с близкими кулинар Евгения Решанова собрала самые лучшие идеи со всего света. Приготовим яйца чилбир, сальтисон, сладкую уху и минестроне, грибной паштет, домашний хлеб, тыквенные булочки, королевскую ватрушку. Не останутся без внимания и ностальгические рецепты: варёная кукуруза, рыбные котлеты и куриные отбивные, жарёха, творожные рогалики, пышный манник на новый лад и сладкая 'Картошка'.Воспоминания из детства - живые и красочные - будут сопровождать нас. Вместе с автором отправимся в небольшой уральский городок, вспомним лакомства и детские шалости, семейные праздники и даже бабушкин сервиз. Самое вкусное - от завтраков до десертов!",
+      "For cozy meetings with loved ones, cook Evgenia Reshanova has collected the best ideas from around the world. We will prepare chilbir eggs, saltison, sweet fish soup and minestrone, mushroom pate, homemade bread, pumpkin buns, royal cheesecake. Nostalgic recipes will not be ignored either: boiled corn, fish cutlets and chicken chops, roast beef, cottage cheese bagels, lush mannikin in a new way and sweet potatoes.Memories from childhood - vivid and colorful - will accompany us. Together with the author, we will go to a small Ural town, remember treats and children's pranks, family holidays and even a grandmother's set. The most delicious - from breakfasts to desserts!",
     image:
       "https://img3.labirint.ru/rc/ce1bf982c5c84d4007ae8c0be15f5d65/363x561q80/books101/1003717/cover.jpg?1706603105",
     price: "920",
   },
   {
     id: 17,
-    title: "Сначала — завтрак! Рецепты, которые вы полюбите",
-    author: "Настя Вэрайети",
+    title: "Breakfast first! Recipes that you will love",
+    author: "Nastya Varayeti",
     description:
-      "Как вы любите завтракать? Яичница? Сосиски? Овсянка? Знаменитый фуд-блогер Настя Вэрайети в своей третьей книге «Сначала — завтрак!» научит завтракать гораздо интереснее и полезнее. Ведь она приготовила целых 43 рецепта — для будних дней и сборов на работу, для неторопливых выходных и роскошных праздников. Легкие и более калорийные, быстрые и требующие чуть больше времени для приготовления. Сладкие, соленые, пряные. Настя знает, что именно от завтрака зависит и настроение, и успешность каждого дня, поэтому предлагает приготовить марокканские блины, ленивые хачапури, глазированные сырки с черникой, вареники с сыром и грибами, фокаччу с пармезаном, рикотники, творожные вафли и многое-многое другое. Здесь каждый найдет вариант своего идеального завтрака. В любом рецепте от Насти — тепло и радость. Ведь все приготовленное для любимых дома и своими руками имеет ни с чем несравнимый вкус.",
-    image: "https://cdn.eksmo.ru/v2/ITD000000000955864/COVER/cover1__w820.webp",
+      "How do you like to have breakfast? Scrambled eggs? Sausages? Oatmeal? The famous food blogger Nastya Varayeti in her third book 'Breakfast First!' will teach you how to have breakfast much more interesting and useful. After all, she has prepared as many as 43 recipes — for weekdays and work trips, for leisurely weekends and luxurious holidays. They are light and more high-calorie, fast and require a little more time to cook. Sweet, salty, spicy. Nastya knows that both the mood and the success of each day depend on breakfast, so she suggests cooking Moroccan pancakes, lazy khachapuri, glazed cheeses with blueberries, dumplings with cheese and mushrooms, focaccia with parmesan, ricotniks, cottage cheese waffles and much, much more. Here everyone will find an option for their ideal breakfast. Any recipe from Nastya contains warmth and joy. After all, everything prepared for loved ones at home and with their own hands has an incomparable taste.",
+    image:
+      "https://cdn.eksmo.ru/v2/ITD000000000955864/COVER/cover1__w820.webp ",
     price: "890",
   },
+
   {
     id: 18,
-    title: "Большая кулинарная книга",
-    author: "Похлебкин В.В.",
+    title: "Big Cookbook",
+    author: "V.V.Pokhlebkin",
     description:
-      "В. В. Похлёбкин человек, который удивительным образом успевал писать работы по скандинавистике, делать купажи чая для космонавтов и создать самую цитируемую монографию по истории кулинарии в СССР. В этом сборнике вы найдете выдающиеся работы В. В. Похлёбкина: от «Занимательной кулинарии» до «Кулинарного словаря». С помощью этой книги вы не только научитесь готовить, но и узнаете о становлении и развитии национальных кухонь.",
+      "V. V. Pokhlebkin is a man who surprisingly managed to write works on Scandinavian studies, make tea blends for astronauts and create the most cited monograph on the history of cooking in the USSR. In this collection you will find outstanding works by V. V. Pokhlebkin: from 'Entertaining cooking' to 'Culinary Dictionary'. With the help of this book, you will not only learn how to cook, but also learn about the formation and development of national cuisines.",
     image: "https://cdn.eksmo.ru/v2/ITD000000000164177/COVER/cover1__w820.webp",
     price: "3900",
   },
   {
     id: 19,
     title:
-      "Лучшие десерты со сниженной калорийностью. Абсолютно натуральные сладости на каждый день",
-    author: "Елизавета Романова",
+      "The best desserts with reduced calories. Absolutely natural sweets for every day",
+    author: "Elizaveta Romanova",
     description:
-      "Несмотря на увещевания диетологов, большинство из нас все-таки любит сладкое. У издательства «Эксмо» для сладкоежек хорошие новости: с книгой фуд-блогера Елизаветы Романовой «Лучшие десерты со сниженной калорийностью. Абсолютно натуральные сладости на каждый день» можно есть то, что любишь, без чувства вины и опасений за фигуру и здоровье. Елизавета собрала рецепты всеми любимых классических тортов, пирожных, глазированных сырков, мороженого и других десертов, заменив излишне калорийные ингредиенты на более легкие. Не беспокойтесь, они остались такими же вкусными! Хотя в большинстве нет глютена, сахара и сливочного масла. И, тем более — никаких искусственных красителей и ароматизаторов. Автор заботится о белковой и витаминной ценности, заменяя масляные крема, белую муку зерновыми смесями, а также использует по максимуму пользу орехов, фруктов и полезных ингредиентов. В этой книге вы найдете разные варианты замен и добавок и скоро сами сможете заменять в рецептах то, что вам не подходит или не нравится.",
-    image: "https://cdn.eksmo.ru/v2/ITD000000001294892/COVER/cover1__w820.webp",
+      "Despite the admonitions of nutritionists, most of us still enjoy sweets. Eksmo Publishing House has good news for sweet tooths: with the book by food blogger Elizaveta Romanova, The Best Desserts with Reduced Calories: Absolutely Natural Sweets for Every Day, you can indulge in your favorite treats without feeling guilty or worrying about your figure and health. Elizaveta has collected recipes for everyone's favorite classic cakes, pastries, glazed cheeses, ice creams, and other desserts, replacing excessively high-calorie ingredients with lighter alternatives. Don't worry—they're still delicious! Most of them are free from gluten, sugar, and butter, and contain no artificial colors or flavors. The author focuses on the protein and vitamin content, substituting butter creams and white flour with grain mixtures, and using the maximum benefits of nuts, fruits, and healthy ingredients. In this book, you will find various options for substitutions and additions, allowing you to easily replace ingredients you don't like or prefer to avoid.",
+    image:
+      "https://cdn.eksmo.ru/v2/ITD000000001294892/COVER/cover1__w820.webp ",
     price: "1200",
   },
   {
     id: 20,
-    title: "Цветы и выпечка. Вдохновение готовить вкусно и красиво!",
-    author: "Аннелие Андерссон",
+    title: "Flowers and pastries. Inspiration to cook delicious and beautiful!",
+    author: "Annelie Andersson",
     description:
-      "Когда автору, Аннелие Андерссон, предложили написать эту книгу, ей было нетрудно согласиться. «На мой взгляд, это самое значимое для меня дело — соединить воедино свои главные страсти в жизни: готовить выпечку, выращивать цветы и фотографировать». Прежде всего вас покорит красота цветочных композиций на фото. Затем вы выберете рецепт хлеба или пирога и приготовите сначала его. Аннелие описала подробно все процессы подготовки и приготовления и во вступительной части (обратите особое внимание на то, как общаться с духовкой), и для каждого рецепта соответственно. А дальше день за днем вы будете перелистывать книгу от осени к лету и наслаждаться струящимися из нее ароматами и чудесной выпечкой, созданной уже вашими руками.",
-    image: "https://cdn.eksmo.ru/v2/ITD000000001158321/COVER/cover1__w820.webp",
+      "When the author, Annelia Andersson, was asked to write this book, it was not difficult for her to agree. 'In my opinion, this is the most important thing for me — to combine my main passions in life: baking, growing flowers and photographing.' First of all, you will be captivated by the beauty of the flower arrangements in the photo. Then you will choose a bread or pie recipe and cook it first. Annelie described in detail all the preparation and cooking processes both in the introductory part (pay special attention to how to communicate with the oven) and for each recipe, respectively. And then, day after day, you will flip through the book from autumn to summer and enjoy the aromas flowing from it and the wonderful pastries created by your own hands.",
+    image:
+      "https://cdn.eksmo.ru/v2/ITD000000001158321/COVER/cover1__w820.webp ",
     price: "2700",
   },
   {
     id: 21,
-    title: "Большая кулинарная книга",
-    author: "Похлебкин В.В.",
+    title: "The Big Cookbook",
+    author: "V.V.Pokhlebkin",
     description:
-      "В. В. Похлёбкин человек, который удивительным образом успевал писать работы по скандинавистике, делать купажи чая для космонавтов и создать самую цитируемую монографию по истории кулинарии в СССР. В этом сборнике вы найдете выдающиеся работы В. В. Похлёбкина: от «Занимательной кулинарии» до «Кулинарного словаря». С помощью этой книги вы не только научитесь готовить, но и узнаете о становлении и развитии национальных кухонь.",
+      "V. V. Pokhlebkin is a man who surprisingly managed to write works on Scandinavian studies, make tea blends for astronauts and create the most cited monograph on the history of cooking in the USSR. In this collection you will find outstanding works by V. V. Pokhlebkin: from 'Entertaining cooking' to 'Culinary Dictionary'. With the help of this book, you will not only learn how to cook, but also learn about the formation and development of national cuisines.",
     image: "https://cdn.eksmo.ru/v2/ITD000000000164177/COVER/cover1__w820.webp",
     price: "1900",
   },
   {
     id: 22,
     title:
-      "Кондитерская Hummingbird bakery. Сладкие рецепты из культовой кондитерской Лондона (Капкейки)",
-    author: "Тарек Малуф",
+      "Hummingbird bakery. Sweet recipes from London's iconic pastry shop (Cupcakes)",
+    author: "Tarek Malouf",
     description:
-      "Чудесные миниатюрные капкейки, шикарные торты и чизкейки, хрустящее печенье и ароматные пироги - при одном перечислении этих лакомств текут слюнки! Хотите приготовить их все? В этой книге вас ждут лучшие, самые любимые, популярные, тысячу раз опробованные рецепты американской домашней выпечки - добротной и простой (но, конечно же, с изюминкой от кондитеров Hummingbird). Авторские мятно-карамельные капкейки, простое и вкусное печенье, впечатляющие десерты, уютные пироги - среди рецептов найдется и классика, и ее современные интерпретации. Чистое вдохновение!",
+      "Wonderful miniature cupcakes, gorgeous cakes and cheesecakes, crunchy cookies and fragrant pies - just listing these treats makes your mouth water! Do you want to cook them all? In this book, you will find the best, most beloved, popular, tried-and-tested recipes for American homemade pastries - good and simple (but, of course, with a twist from Hummingbird confectioners). Author's mint-caramel cupcakes, simple and delicious cookies, impressive desserts, cozy pies - among the recipes there are classics and its modern interpretations. Pure inspiration!",
     image: "https://cdn.eksmo.ru/v2/ITD000000000920153/COVER/cover1__w820.webp",
     price: "1000",
   },
   {
     id: 23,
-    title: "Позавтракаем? 62 яркие идеи для самого бодрого утра",
-    author: "Нина Тарасова",
+    title:
+      "Shall we have breakfast? 62 bright ideas for the most cheerful morning",
+    author: "Nina Tarasova",
     description:
-      "Хотите радовать себя яркими завтраками каждый день — хоть в ленивую субботу, хоть в самый загруженный вторник, даже если проспали будильник? С книгой Нины Тарасовой это очень просто. Доставайте муку, яйца, крупы и самый главный ингредиент — любовь! Под обложкой вас ждут 62 рецепта, чтобы бодро начать утро: блины и оладушки, вафли, каши, тосты, гранола и смузи для тех, кто торопится.",
-    image: "https://cdn.eksmo.ru/v2/ITD000000001304642/COVER/cover1__w820.webp",
+      "Do you want to please yourself with bright breakfasts every day — even on a lazy Saturday, even on the busiest Tuesday, even if you overslept the alarm clock? With Nina Tarasova's book, it's very simple. Get out flour, eggs, cereals and the most important ingredient — love! There are 62 recipes waiting for you under the cover to cheerfully start the morning: pancakes and fritters, waffles, porridges, toasts, granola and smoothies for those in a hurry.",
+    image:
+      "https://cdn.eksmo.ru/v2/ITD000000001304642/COVER/cover1__w820.webp ",
     price: "2700",
   },
   {
     id: 24,
-    title: "Вкус моря",
-    author: "Маркович С.",
-    description: "Вкус моря",
+    title: "The taste of the sea",
+    author: "Markovich S.",
+    description: "The taste of the sea",
     image: "https://cdn.eksmo.ru/v2/430000000000182497/COVER/cover1__w820.jpg",
     price: "900",
   },
   {
     id: 25,
-    title: "Безупречный стейк. Приготовление от А до Я",
-    author: "Алексей Онегин",
+    title: "The perfect steak. Cooking from A to Z",
+    author: "Alexey Onegin",
     description:
-      "ХМало какое блюдо может всерьез соперничать с аппетитным куском мяса, зажаренным до румяной корочки снаружи и сохранившим ароматный сок внутри. Стейк способен превратить любой ужин в небольшой праздник, а умение виртуозно готовить стейки - лучший способ впечатлить друзей или проложить кратчайший путь к сердцу вашей пассии. Неудивительно, что хорошо готовить стейки умеют далеко не все, а научиться не у кого: даже профессиональные повара слепо копируют ошибочные рецепты и тиражируют мифы, которые легко опровергнуть опытным путем. Что же в этом случае делать? Самый лучший вариант - это пройти весь путь самому от покупки мяса до того момента, как вы оставите готовый стейк отдыхать. Алексей Онегин буквально препарировал процесс получения стейка в домашних условиях, собрал воедино все нюансы и подводные камни, разложил по полочкам гарниры и соусы для того, чтобы у вас все получилось.",
+      "Hmm, what kind of dish can seriously compete with an appetizing piece of meat, fried to a golden brown on the outside and preserved the fragrant juice inside. Steak can turn any dinner into a small celebration, and the ability to masterfully cook steaks is the best way to impress friends or pave the shortest path to the heart of your passion. It is not surprising that not everyone can cook steaks well, and there is no one to learn from: even professional chefs blindly copy erroneous recipes and replicate myths that are easy to refute empirically. What should I do in this case? The best option is to go all the way yourself from buying meat to the moment you leave the finished steak to rest. Alexey Onegin literally dissected the process of getting a steak at home, put together all the nuances and pitfalls, put side dishes and sauces on the shelves so that everything worked out for you.",
     image: "https://kniga.lv/icache/b99834bc/97edbe83/93c6a49e.jpg",
     price: "1156",
   },
   {
     id: 26,
-    title: "От салата до стейка (оформление2)",
-    author: "Кеда Блэк",
+    title: "From salad to steak (formation2)",
+    author: "Keda Black",
     description:
-      "Пожалуй, каждый повар, начинающий или опытный, должен иметь под рукой самые необходимые рецепты. В ваших руках книга, где собраны рецепты основных классических блюд, которые никогда не выйдут из моды. С ее помощью вы научитесь правильно готовить соус бешамель и майонез, обжарить стейк или потушить ягненка, удивить своих близких пирогом из цукини и трайфлом по-итальянски. А самое главное, к каждому рецепту прилагается подробная пошаговая инструкция из фотографий, которая безусловно облегчит вам готовку и подарит приятное времяпрепровождение на кухне.",
+      "Perhaps every cook, beginner or experienced, should have the most necessary recipes at hand. In your hands is a book containing recipes for basic classic dishes that will never go out of fashion. With its help, you will learn how to properly cook bechamel sauce and mayonnaise, roast steak or stew lamb, surprise your loved ones with zucchini pie and trifle in Italian. And most importantly, each recipe is accompanied by detailed step-by-step instructions from photos, which will certainly make cooking easier for you and give you a pleasant time in the kitchen.",
     image: "https://cdn.eksmo.ru/v2/ITD000000000239275/COVER/cover1__w820.webp",
     price: "1700",
   },
   {
     id: 27,
-    title: "Аэрогриль",
+    title: "Aerogrill",
     author: "",
     description:
-      "Аэрогриль – современный и надежный помощник на кухне, заменяющий собой сразу несколько устройств. Без лишних хлопот в нем можно приготовить практически любое блюдо: от теплого салата гриль из овощей и рассыпчатой гречневой каши до потрясающе аппетитных ребрышек в медовой глазури или ароматного апельсинового кекса. Набор самых лучших и проверенных рецептов для аэрогриля вы найдете в этой книге, а приготовить выбранные блюда помогут красочные иллюстрации, пошаговое руководство и полезные советы повара.",
-    image: "https://cdn.eksmo.ru/v2/ITD000000000189971/COVER/cover1__w820.webp",
+      "Aerogrill is a modern and reliable assistant in the kitchen, replacing several devices at once. Without unnecessary hassle, you can cook almost any dish in it: from a warm grilled salad of vegetables and crumbly buckwheat porridge to stunningly appetizing ribs in honey glaze or a fragrant orange cupcake. You will find a set of the best and proven recipes for aerogrill in this book, and colorful illustrations, a step-by-step guide and useful tips from the chef will help you prepare the selected dishes.",
+    image:
+      "https://cdn.eksmo.ru/v2/ITD000000000189971/COVER/cover1__w820.webp ",
     price: "900",
   },
   {
     id: 28,
-    title: "Электронная книга «Готовим за 20 минут»",
+    title: "E-book 'Cooking in 20 minutes'",
     author: "",
     description:
-      "Как привнеси разнообразие в ежедневный рацион? Как по-новому обыграть привычные ингредиенты? Какое блюдо приготовить, чтобы по-настоящему удивить семью и близких? Именно эти вопросы призвана решить новая серия 'Ты классная хозяйка!'. Серия для тех, кто может одновременно варить борщ и выпекать сметанный торт с закрытыми глазами. Для тех, кому просто нужны свежие идеи блюд из знакомых продуктов и несколько неожиданных рецептов на особый случай. Для тех, чье звание классной хозяйки неоспоримо и не нуждается в доказательствах.",
+      "How do you bring variety to your daily diet? How to beat the usual ingredients in a new way? What dish should I cook to really surprise my family and loved ones? It is these issues that the new series 'You are a great hostess!' is designed to solve. The series is for those who can simultaneously cook borscht and bake sour cream cake with their eyes closed. For those who just need fresh dish ideas from familiar foods and a few unexpected recipes for a special occasion. For those whose title of class hostess is indisputable and does not need proof.",
     image: "https://cdn.eksmo.ru/v2/ITDA00000000008972/COVER/cover__w820.webp",
     price: "700",
   },
   {
     id: 29,
-    title: "Закуски за 30 минут",
+    title: "Snacks in 30 minutes",
     author: "",
     description:
-      "Приготовить закуски за 30 минут? Легко! С нашим Поваром и его помощником поваренком вы сможете подать к столу вкусные и разнообразные закуски всего за полчаса. Карпаччо или мясной рулет, тар-тар или жульен - минимум времени и вы сможете порадовать своих близких восхитительными закусками!",
-    image: "https://cdn.eksmo.ru/v2/ITD000000000221822/COVER/cover1__w820.webp",
+      "Make snacks in 30 minutes? Easy! With our Chef and his assistant cook, you can serve delicious and varied snacks to the table in just half an hour. Carpaccio or meatloaf, tartar or julienne - a minimum of time and you will be able to please your loved ones with delicious snacks!",
+    image:
+      "https://cdn.eksmo.ru/v2/ITD000000000221822/COVER/cover1__w820.webp ",
     price: "1900",
   },
 ];
 
 const BooksPage = () => {
   const [selectedBook, setSelectedBook] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1); // Сброс страницы при новом поиске
   const [searchTerm, setSearchTerm] = useState("");
   const booksPerPage = 8;
   const { addProductToCart, checkProductInCart, deleteProductFromCart } =
@@ -349,11 +360,11 @@ const BooksPage = () => {
             fontFamily: "Snell Roundhand, cursive",
           }}
         >
-          Кулинарные рецепты книг
+          Cooking recipes of books
         </Typography>
 
         <TextField
-          label="Поиск книг"
+          label="Book Search"
           variant="outlined"
           size="small"
           value={searchTerm}
@@ -486,7 +497,7 @@ const BooksPage = () => {
                   textTransform: "uppercase",
                 }}
               >
-                Автор: {selectedBook.author}
+                Author: {selectedBook.author}
               </Typography>
               <Typography
                 variant="body1"
@@ -497,7 +508,7 @@ const BooksPage = () => {
                   textAlign: "justify",
                 }}
               >
-                Описание: {selectedBook.description}
+                Description: {selectedBook.description}
               </Typography>
               <img
                 src={selectedBook.image}

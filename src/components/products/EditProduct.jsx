@@ -66,10 +66,10 @@ const EditProduct = () => {
 
     try {
       await editDish(id, updatedDish);
-      setMessage("Блюдо успешно обновлено!");
+      setMessage("The dish has been successfully updated!");
       navigate("/productList");
     } catch (error) {
-      setMessage("Ошибка при обновлении блюда. Попробуйте снова.");
+      setMessage("Error updating dish. Try again.");
       console.error("Error updating dish:", error);
     }
   };
@@ -93,10 +93,10 @@ const EditProduct = () => {
 
   return (
     <div className="edit-product-container">
-      <h2>Редактирование блюда</h2>
+      <h2>Editing a dish</h2>
       {message && <p>{message}</p>}
       <div>
-        <label>Название блюда:</label>
+        <label>Dish name:</label>
         <input
           type="text"
           value={name}
@@ -105,40 +105,40 @@ const EditProduct = () => {
         />
       </div>
       <div>
-        <label>Кухня:</label>
+        <label>Cuisine:</label>
         <select
           value={cuisine}
           onChange={(e) => setCuisine(e.target.value)}
           className="select-field"
         >
-          <option value="">Выберите кухню</option>
-          <option value="Asian">Азиатская</option>
-          <option value="European">Европейская</option>
-          <option value="Kyrgyz">Киргизская</option>
-          <option value="Russian">Русская</option>
-          <option value="Japanese">Японская</option>
-          <option value="Chinese">Китайская</option>
+          <option value="">Choose a kitchen</option>
+          <option value="Asian">Asian</option>
+          <option value="Europian">Europian</option>
+          <option value="Kyrgyz">Kyrgyz</option>
+          <option value="Russian">Russian</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Chinese">Chinese</option>
         </select>
       </div>
       <div>
-        <label>Тип блюда:</label>
+        <label>Type of dish:</label>
         <select
           value={type}
           onChange={(e) => setType(e.target.value)}
           className="select-field"
         >
-          <option value="">Выберите тип блюда</option>
-          <option value="Snack">Закуска</option>
-          <option value="First course">Первое блюдо</option>
-          <option value="Hot dish">Горячее блюдо</option>
-          <option value="Dessert">Десерт</option>
-          <option value="Cocktail">Коктейль</option>
-          <option value="Soup">Суп</option>
-          <option value="Salad">Салат</option>
+          <option value="">Select dish type</option>
+          <option value="Snack">Snack</option>
+          <option value="First course">First course</option>
+          <option value="Hot dish">Hot dish</option>
+          <option value="Dessert">Dessert</option>
+          <option value="Cocktail">Cocktail</option>
+          <option value="Soup">Soup</option>
+          <option value="Salad">Salad</option>
         </select>
       </div>
       <div>
-        <label>Время приготовления:</label>
+        <label>Cooking time:</label>
         <input
           type="number"
           value={cookingTime}
@@ -147,7 +147,7 @@ const EditProduct = () => {
         />
       </div>
       <div>
-        <label>Рецепт:</label>
+        <label>Recipe:</label>
         <textarea
           value={recipe}
           onChange={(e) => setRecipe(e.target.value)}
@@ -155,20 +155,20 @@ const EditProduct = () => {
         />
       </div>
       <div>
-        <label>Уровень сложности:</label>
+        <label>Difficulty level:</label>
         <select
           value={level}
           onChange={(e) => setLevel(e.target.value)}
           className="select-field"
         >
-          <option value="">Выберите уровень сложности</option>
-          <option value="Easy">Легкий</option>
-          <option value="Medium">Средний</option>
-          <option value="Hard">Сложный</option>
+          <option value="">Select difficulty level</option>
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
         </select>
       </div>
       <div>
-        <label>Количество человек:</label>
+        <label>Number of persons:</label>
         <input
           type="number"
           value={quantPeople}
@@ -177,7 +177,7 @@ const EditProduct = () => {
         />
       </div>
       <div>
-        <label>Описание:</label>
+        <label>Description:</label>
         <textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -185,17 +185,17 @@ const EditProduct = () => {
         />
       </div>
       <div>
-        <label>Фото:</label>
+        <label>Photo:</label>
         <input
           type="file"
           onChange={(e) => setPhoto(e.target.files[0])}
-          placeholder="Выбрать фото"
+          placeholder="Chooose photo"
           className="input-field"
         />
       </div>
 
       <div>
-        <h3>Ингредиенты:</h3>
+        <h3>Ingredients:</h3>
         {selectedIngredients.map((ingredient, index) => (
           <div key={index} className="ingredient-row">
             <select
@@ -210,7 +210,7 @@ const EditProduct = () => {
               }}
               className="select-field"
             >
-              <option value="">Выберите ингредиент</option>
+              <option value="">Select ingredient</option>
               {ingredientsList.map((ing) => (
                 <option key={ing.id} value={ing.id}>
                   {ing.name}
@@ -221,15 +221,15 @@ const EditProduct = () => {
               type="number"
               value={quantities[index] || ""}
               onChange={(e) => handleQuantityChange(index, e.target.value)}
-              placeholder="Количество"
+              placeholder="Quantity"
             />
-            <button onClick={() => removeIngredient(index)}>Удалить</button>
+            <button onClick={() => removeIngredient(index)}>Delete</button>
           </div>
         ))}
-        <button onClick={addIngredient}>Добавить ингредиент</button>
+        <button onClick={addIngredient}>Add ingredient</button>
       </div>
 
-      <button onClick={handleUpdate}>Сохранить изменения</button>
+      <button onClick={handleUpdate}>Save changes</button>
     </div>
   );
 };

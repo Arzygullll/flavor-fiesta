@@ -14,7 +14,7 @@ const Register = () => {
 
   const handleSave = async () => {
     if (!email.trim() || !password.trim() || !passwordConfirm.trim()) {
-      alert("Пожалуйста, заполните все поля.");
+      alert("Please fill out all fields.");
       return;
     }
 
@@ -29,8 +29,8 @@ const Register = () => {
       await handleRegister(formData);
       navigate("/login");
     } catch (error) {
-      alert("Ошибка при регистрации. Пожалуйста, попробуйте снова.");
-      console.error("Ошибка регистрации:", error);
+      alert("Error during registration. Please try again.");
+      console.error("Registration error:", error);
     }
   };
 
@@ -51,26 +51,26 @@ const Register = () => {
         <input
           onChange={(e) => setPassword(e.target.value)}
           type="password"
-          placeholder="Пароль"
+          placeholder="Password"
         />
         <input
           onChange={(e) => setPasswordConfirm(e.target.value)}
           type="password"
-          placeholder="Подтвердите пароль"
+          placeholder="Confirm the password"
         />
         <input
           onChange={(e) => setFirstName(e.target.value)}
           type="text"
-          placeholder="Имя"
+          placeholder="First name"
         />
         <input
           onChange={(e) => setLastName(e.target.value)}
           type="text"
-          placeholder="Фамилия"
+          placeholder="Last name"
         />
-        <button onClick={handleSave}>Зарегистрироваться</button>
+        <button onClick={handleSave}>Register</button>
         <Link to="/reset-password" className="forgot-password-link">
-          Забыли пароль?
+          Forgot your password?
         </Link>
       </div>
     </div>

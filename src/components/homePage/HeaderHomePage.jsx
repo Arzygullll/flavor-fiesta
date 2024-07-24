@@ -13,55 +13,55 @@ const HeaderHomePage = () => {
 
   const questions = [
     {
-      question: "1. Какой главный ингредиент в ризотто?",
-      options: ["Рис", "Макароны", "Картофель", "Мясо"],
-      correctAnswer: "Рис",
+      question: "1. What is the main ingredient in risotto?",
+      options: ["Rice", "Pasta", "Potatoes", "Meat"],
+      correctAnswer: "Rice",
     },
     {
-      question: "2. Из какой страны происходит суши?",
-      options: ["Китай", "Япония", "Южная Корея", "Таиланд"],
-      correctAnswer: "Япония",
+      question: "2. What country does sushi come from?",
+      options: ["China", "Japan", "South Korea", "Thailand"],
+      correctAnswer: "Japan",
     },
     {
-      question: "3. Какой соус используется в классическом Цезаре?",
-      options: ["Цезарь", "Ранч", "Бальзамико", "Соевый соус"],
-      correctAnswer: "Цезарь",
+      question: "3. What sauce is used in classic Caesar?",
+      options: ["Caesar", "Ranch", "Balsamic", "Soy sauce"],
+      correctAnswer: "Caesar",
     },
     {
-      question: "4. Какая рыба традиционно используется в тар-тар?",
-      options: ["Лосось", "Тунец", "Скумбрия", "Сельдь"],
-      correctAnswer: "Тунец",
+      question: "4. What fish is traditionally used in tartare?",
+      options: ["Salmon", "Tuna", "Mackerel", "Herring"],
+      correctAnswer: "Tuna",
     },
     {
-      question: "5. Какой тип пасты имеет форму спагетти?",
-      options: ["Пенне", "Фусилли", "Спагетти", "Равиоли"],
-      correctAnswer: "Спагетти",
+      question: "5. What type of pasta is spaghetti shaped?",
+      options: ["Penne", "Fusilli", "Spaghetti", "Ravioli"],
+      correctAnswer: "Spaghetti",
     },
     {
-      question: "6. Какой овощ используется для приготовления гуакамоле?",
-      options: ["Помидор", "Авокадо", "Огурец", "Перец"],
-      correctAnswer: "Авокадо",
+      question: "6. What vegetable is used to make guacamole?",
+      options: ["Tomato", "Avocado", "Cucumber", "Pepper"],
+      correctAnswer: "Avocado",
     },
     {
-      question: "7. Что такое фуа-гра?",
-      options: ["Мясной соус", "Изысканная печень утки", "Сыр", "Фрукты"],
-      correctAnswer: "Изысканная печень утки",
+      question: "7. What is foie gras?",
+      options: ["Meat sauce", "Gourmet duck liver", "Cheese", "Fruit"],
+      correctAnswer: "Exquisite duck liver",
     },
     {
       question:
-        "8. Какой традиционный итальянский десерт готовят из сыра маскарпоне?",
-      options: ["Тирамису", "Панна котта", "Софрито", "Канноли"],
-      correctAnswer: "Тирамису",
+        "8. What traditional Italian dessert is made from mascarpone cheese?",
+      options: ["Tiramisu", "Panna Cotta", "Sofrito", "Cannoli"],
+      correctAnswer: "Tiramisu",
     },
     {
-      question: "9. Из какого региона происходит сыр пармезан?",
-      options: ["Франция", "Италия", "Испания", "Греция"],
-      correctAnswer: "Италия",
+      question: "9. What region does Parmesan cheese come from?",
+      options: ["France", "Italy", "Spain", "Greece"],
+      correctAnswer: "Italy",
     },
     {
-      question: "10. Какая специя используется в традиционном тайском карри?",
-      options: ["Куркума", "Кориандр", "Кардамон", "Чили"],
-      correctAnswer: "Куркума",
+      question: "10. What spice is used in traditional Thai curry?",
+      options: ["Turmeric", "Coriander", "Cardamom", "Chili"],
+      correctAnswer: "Turmeric",
     },
   ];
 
@@ -121,7 +121,7 @@ const HeaderHomePage = () => {
     <div className="container">
       <section className="highlight-tag">
         <div className="highlight-content">
-          <h1>Праздник вкусов и кулинарных открытий каждый день!</h1>
+          <h1>A celebration of tastes and culinary discoveries every day!</h1>
         </div>
       </section>
 
@@ -130,17 +130,17 @@ const HeaderHomePage = () => {
         <video className="background-video" src={videoBg} autoPlay loop muted />
         <div className="content">
           <h4>
-            Рецепты, книги, заведения – все для поваров и любителей кулинарии.
-            Давайте вместе открывать новые вкусы мира!
+            Recipes, books, establishments - everything for chefs and cooking
+            lovers. Let's discover new tastes of the world together!
           </h4>
         </div>
       </div>
 
       <section className="section3">
-        <h2>Время для кулинарной викторины!</h2>
+        <h2>Time for a cooking quiz!</h2>
         <p>
-          Проверьте, насколько хорошо вы знаете вкусные блюда и кулинарные
-          тренды. Удачи!
+          Test how well you know delicious dishes and culinary trends. Good
+          luck!
         </p>
 
         {!isQuizFinished ? (
@@ -166,7 +166,7 @@ const HeaderHomePage = () => {
 
             {isCorrect !== null && (
               <p className={`feedback ${isCorrect ? "correct" : "incorrect"}`}>
-                {isCorrect ? "Правильно!" : "Неправильно, попробуйте еще раз."}
+                {isCorrect ? "Right!" : "Wrong, try again."}
               </p>
             )}
 
@@ -174,11 +174,11 @@ const HeaderHomePage = () => {
           </div>
         ) : (
           <div className="quiz-results">
-            <h3>Викторина завершена!</h3>
-            <p>Правильные ответы: {score.correct}</p>
-            <p>Неправильные ответы: {score.incorrect}</p>
+            <h3>Quiz is over!</h3>
+            <p>Right answers: {score.correct}</p>
+            <p>Incorrect answers: {score.incorrect}</p>
             <button className="restart-button" onClick={handleRestartQuiz}>
-              Начать заново
+              Start again
             </button>
           </div>
         )}
@@ -222,12 +222,12 @@ const HeaderHomePage = () => {
             </a>
           </div>
           <div className="footer-text">
-            <h5>Путешествуйте по миру вкусов с нами!</h5>
+            <h5>Travel the world of tastes with us!</h5>
             <p>
-              Подписывайтесь, чтобы быть в курсе самых захватывающих рецептов и
-              кулинарных тайн, которые вдохновят вас на новые гастрономические
-              приключения. Оставайтесь с нами и откройте для себя секреты,
-              которые превратят каждое блюдо в произведение искусства!
+              Subscribe to stay up to date with the most exciting recipes and
+              culinary secrets that will inspire you to new gastronomic
+              adventures. Stay with us and discover the secrets, which will turn
+              every dish into a work of art!
             </p>
             <div className="footer-decor">
               <span className="decor-icon">&#9733;</span>
@@ -238,14 +238,14 @@ const HeaderHomePage = () => {
             </div>
           </div>
           <div className="footer-contacts">
-            <h5>Контакты</h5>
-            <p>Телефон: +996 123 456 789</p>
+            <h5>Contacts</h5>
+            <p>Phone: +996 123 456 789</p>
             <p>Email: info@flavorfiesta.com</p>
-            <p>Адрес: ул. Московская, 123</p>
+            <p>Address: st. Moscow, 123</p>
           </div>
         </div>
         <div className="footer-credits">
-          <p>© 2024 Flavor Fiesta. Все права защищены.</p>
+          <p>© 2024 Flavor Fiesta. All rights reserved.</p>
         </div>
       </footer>
     </div>

@@ -1,0 +1,34 @@
+.cart-page {
+  background-image: url("../components/homePage/assets/e785546b7f725acbcd6f730779780f29.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 103.5vh;
+}
+
+/* Медиа-запросы для адаптивного дизайна */
+@media (max-width: 1200px) {
+  .cart-page {
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 992px) {
+  .cart-page {
+    background-position: top;
+    min-height: 90vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-page {
+    background-position: top;
+    min-height: 80vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .cart-page {
+    background-position: top;
+    min-height: 70vh;
+  }
+}
